@@ -1,0 +1,698 @@
+===== TURN 0 | gold=500 opp_gold~=500 | warriors=3 opp=3 =====
+T0  MOVE B1 60->54  [BUILD]  빈 거점 확보 파병 (hop=1)
+T0  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 1 | gold=499 opp_gold~=509 | warriors=3 opp=3 =====
+T1  BUILD R54 신규 기지 건설(제자리, 상주=1)
+T1  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 2 | gold=223 opp_gold~=233 | warriors=3 opp=3 =====
+T2  MOVE B2 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T2  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 3 | gold=237 opp_gold~=257 | warriors=3 opp=3 =====
+T3  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 4 | gold=261 opp_gold~=281 | warriors=3 opp=3 =====
+T4  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 5 | gold=285 opp_gold~=305 | warriors=3 opp=3 =====
+T5  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 6 | gold=309 opp_gold~=329 | warriors=3 opp=3 =====
+T6  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 7 | gold=333 opp_gold~=343 | warriors=3 opp=3 =====
+T7  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 8 | gold=235 opp_gold~=245 | warriors=4 opp=4 =====
+T8  MOVE B3 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T8  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 9 | gold=249 opp_gold~=269 | warriors=3 opp=3 =====
+T9  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 10 | gold=273 opp_gold~=293 | warriors=3 opp=3 =====
+T10  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 11 | gold=297 opp_gold~=317 | warriors=3 opp=3 =====
+T11  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 12 | gold=321 opp_gold~=341 | warriors=3 opp=3 =====
+T12  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 13 | gold=223 opp_gold~=233 | warriors=4 opp=4 =====
+T13  MOVE B4 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T13  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 14 | gold=235 opp_gold~=255 | warriors=4 opp=4 =====
+T14  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 15 | gold=259 opp_gold~=279 | warriors=3 opp=3 =====
+T15  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 16 | gold=283 opp_gold~=303 | warriors=3 opp=3 =====
+T16  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 17 | gold=307 opp_gold~=327 | warriors=3 opp=3 =====
+T17  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 18 | gold=331 opp_gold~=341 | warriors=3 opp=3 =====
+T18  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 19 | gold=233 opp_gold~=243 | warriors=4 opp=4 =====
+T19  MOVE B5 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T19  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 20 | gold=247 opp_gold~=267 | warriors=3 opp=3 =====
+T20  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 21 | gold=271 opp_gold~=291 | warriors=3 opp=3 =====
+T21  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 22 | gold=295 opp_gold~=315 | warriors=3 opp=3 =====
+T22  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 23 | gold=319 opp_gold~=339 | warriors=3 opp=3 =====
+T23  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 24 | gold=343 opp_gold~=353 | warriors=3 opp=3 =====
+T24  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 25 | gold=245 opp_gold~=255 | warriors=4 opp=4 =====
+T25  MOVE B6 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T25  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 26 | gold=259 opp_gold~=279 | warriors=3 opp=3 =====
+T26  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 27 | gold=283 opp_gold~=303 | warriors=3 opp=3 =====
+T27  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 28 | gold=307 opp_gold~=327 | warriors=3 opp=3 =====
+T28  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 29 | gold=331 opp_gold~=351 | warriors=3 opp=3 =====
+T29  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 30 | gold=233 opp_gold~=243 | warriors=4 opp=4 =====
+T30  MOVE B7 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T30  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 31 | gold=245 opp_gold~=265 | warriors=4 opp=4 =====
+T31  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 32 | gold=269 opp_gold~=289 | warriors=3 opp=3 =====
+T32  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 33 | gold=293 opp_gold~=313 | warriors=3 opp=3 =====
+T33  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 34 | gold=317 opp_gold~=337 | warriors=3 opp=3 =====
+T34  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 35 | gold=341 opp_gold~=351 | warriors=3 opp=3 =====
+T35  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 36 | gold=243 opp_gold~=253 | warriors=4 opp=4 =====
+T36  MOVE B8 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T36  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 37 | gold=257 opp_gold~=277 | warriors=3 opp=3 =====
+T37  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 38 | gold=281 opp_gold~=301 | warriors=3 opp=3 =====
+T38  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 39 | gold=305 opp_gold~=325 | warriors=3 opp=3 =====
+T39  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 40 | gold=329 opp_gold~=349 | warriors=3 opp=3 =====
+T40  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 41 | gold=231 opp_gold~=241 | warriors=4 opp=4 =====
+T41  MOVE B9 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T41  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 42 | gold=243 opp_gold~=263 | warriors=4 opp=4 =====
+T42  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 43 | gold=267 opp_gold~=287 | warriors=3 opp=3 =====
+T43  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 44 | gold=291 opp_gold~=311 | warriors=3 opp=3 =====
+T44  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 45 | gold=315 opp_gold~=335 | warriors=3 opp=3 =====
+T45  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 46 | gold=339 opp_gold~=349 | warriors=3 opp=3 =====
+T46  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 47 | gold=241 opp_gold~=251 | warriors=4 opp=4 =====
+T47  MOVE B10 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T47  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 48 | gold=255 opp_gold~=275 | warriors=3 opp=3 =====
+T48  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 49 | gold=279 opp_gold~=299 | warriors=3 opp=3 =====
+T49  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 50 | gold=303 opp_gold~=323 | warriors=3 opp=3 =====
+T50  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 51 | gold=327 opp_gold~=347 | warriors=3 opp=3 =====
+T51  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 52 | gold=229 opp_gold~=239 | warriors=4 opp=4 =====
+T52  MOVE B11 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T52  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 53 | gold=241 opp_gold~=261 | warriors=4 opp=4 =====
+T53  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 54 | gold=265 opp_gold~=285 | warriors=3 opp=3 =====
+T54  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 55 | gold=289 opp_gold~=309 | warriors=3 opp=3 =====
+T55  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 56 | gold=313 opp_gold~=333 | warriors=3 opp=3 =====
+T56  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 57 | gold=337 opp_gold~=347 | warriors=3 opp=3 =====
+T57  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 58 | gold=239 opp_gold~=249 | warriors=4 opp=4 =====
+T58  MOVE B12 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T58  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 59 | gold=253 opp_gold~=273 | warriors=3 opp=3 =====
+T59  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 60 | gold=277 opp_gold~=297 | warriors=3 opp=3 =====
+T60  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 61 | gold=301 opp_gold~=321 | warriors=3 opp=3 =====
+T61  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 62 | gold=325 opp_gold~=345 | warriors=3 opp=3 =====
+T62  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 63 | gold=227 opp_gold~=237 | warriors=4 opp=4 =====
+T63  MOVE B13 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T63  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 64 | gold=239 opp_gold~=259 | warriors=4 opp=4 =====
+T64  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 65 | gold=263 opp_gold~=283 | warriors=3 opp=3 =====
+T65  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 66 | gold=287 opp_gold~=307 | warriors=3 opp=3 =====
+T66  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 67 | gold=311 opp_gold~=331 | warriors=3 opp=3 =====
+T67  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 68 | gold=335 opp_gold~=345 | warriors=3 opp=3 =====
+T68  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 69 | gold=237 opp_gold~=247 | warriors=4 opp=4 =====
+T69  MOVE B14 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T69  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 70 | gold=251 opp_gold~=271 | warriors=3 opp=3 =====
+T70  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 71 | gold=275 opp_gold~=295 | warriors=3 opp=3 =====
+T71  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 72 | gold=299 opp_gold~=319 | warriors=3 opp=3 =====
+T72  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 73 | gold=323 opp_gold~=343 | warriors=3 opp=3 =====
+T73  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 74 | gold=225 opp_gold~=235 | warriors=4 opp=4 =====
+T74  MOVE B15 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T74  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 75 | gold=237 opp_gold~=257 | warriors=4 opp=4 =====
+T75  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 76 | gold=261 opp_gold~=281 | warriors=3 opp=3 =====
+T76  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 77 | gold=285 opp_gold~=305 | warriors=3 opp=3 =====
+T77  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 78 | gold=309 opp_gold~=329 | warriors=3 opp=3 =====
+T78  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 79 | gold=333 opp_gold~=343 | warriors=3 opp=3 =====
+T79  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 80 | gold=235 opp_gold~=245 | warriors=4 opp=4 =====
+T80  MOVE B16 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T80  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 81 | gold=249 opp_gold~=269 | warriors=3 opp=3 =====
+T81  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 82 | gold=273 opp_gold~=293 | warriors=3 opp=3 =====
+T82  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 83 | gold=297 opp_gold~=317 | warriors=3 opp=3 =====
+T83  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 84 | gold=321 opp_gold~=341 | warriors=3 opp=3 =====
+T84  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 85 | gold=223 opp_gold~=233 | warriors=4 opp=4 =====
+T85  MOVE B17 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T85  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 86 | gold=235 opp_gold~=255 | warriors=4 opp=4 =====
+T86  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 87 | gold=259 opp_gold~=279 | warriors=3 opp=3 =====
+T87  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 88 | gold=283 opp_gold~=303 | warriors=3 opp=3 =====
+T88  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 89 | gold=307 opp_gold~=327 | warriors=3 opp=3 =====
+T89  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 90 | gold=331 opp_gold~=341 | warriors=3 opp=3 =====
+T90  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 91 | gold=233 opp_gold~=243 | warriors=4 opp=4 =====
+T91  MOVE B18 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T91  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 92 | gold=247 opp_gold~=267 | warriors=3 opp=3 =====
+T92  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 93 | gold=271 opp_gold~=291 | warriors=3 opp=3 =====
+T93  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 94 | gold=295 opp_gold~=315 | warriors=3 opp=3 =====
+T94  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 95 | gold=319 opp_gold~=339 | warriors=3 opp=3 =====
+T95  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 96 | gold=343 opp_gold~=353 | warriors=3 opp=3 =====
+T96  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 97 | gold=245 opp_gold~=255 | warriors=4 opp=4 =====
+T97  MOVE B19 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T97  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 98 | gold=259 opp_gold~=279 | warriors=3 opp=3 =====
+T98  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 99 | gold=283 opp_gold~=303 | warriors=3 opp=3 =====
+T99  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 100 | gold=307 opp_gold~=327 | warriors=3 opp=3 =====
+T100  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 101 | gold=331 opp_gold~=351 | warriors=3 opp=3 =====
+T101  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 102 | gold=233 opp_gold~=243 | warriors=4 opp=4 =====
+T102  MOVE B20 60->30  [BUILD]  빈 거점 확보 파병 (hop=4)
+T102  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 103 | gold=245 opp_gold~=265 | warriors=4 opp=4 =====
+T103  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 104 | gold=269 opp_gold~=289 | warriors=3 opp=3 =====
+T104  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 105 | gold=293 opp_gold~=313 | warriors=3 opp=3 =====
+T105  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 106 | gold=317 opp_gold~=337 | warriors=3 opp=3 =====
+T106  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 107 | gold=341 opp_gold~=351 | warriors=3 opp=3 =====
+T107  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 108 | gol===== TURN 105 | gold=515 opp_gold~=565 | warriors=10 opp=10 =====
+T105  MOVE B24 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T105  TRAIN 0 (평시; want=0 nNo===== TURN 109 | gold====== TURN 106 | gold=605 opp_gold~=665 | warriors=10 opp=10 =====
+T106  TRAIN 0 (평시; want=0 n===== TURN 110 | gold=28===== TURN 107 | gold=705 opp_gold~=765 | warriors=10 opp=10 =====
+T107  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 108 | gold=805 opp_gold~=865 | warriors=10 opp=10 =====
+T108  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 109 | gold=907 opp_gold~=967 | warriors=9 opp=9 =====
+T109  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 110 | gold=887 opp_gold~=937 | warriors=10 opp=10 =====
+T110  MOVE B25 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T110  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 111 | gold=977 opp_gold~=1037 | warriors=10 opp=10 =====
+T111  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 112 | gold=1077 opp_gold~=1137 | warriors=10 opp=10 =====
+T112  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 113 | gold=1177 opp_gold~=1237 | warriors=10 opp=10 =====
+T113  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 114 | gold=1279 opp_gold~=1339 | warriors=9 opp=9 =====
+T114  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 115 | gold=1259 opp_gold~=1309 | warriors=10 opp=10 =====
+T115  MOVE B26 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T115  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 116 | gold=1349 opp_gold~=1409 | warriors=10 opp=10 =====
+T116  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 117 | gold=1449 opp_gold~=1509 | warriors=10 opp=10 =====
+T117  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 118 | gold=1549 opp_gold~=1609 | warriors=10 opp=10 =====
+T118  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 119 | gold=1651 opp_gold~=1711 | warriors=9 opp=9 =====
+T119  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 120 | gold=1631 opp_gold~=1681 | warriors=10 opp=10 =====
+T120  MOVE B27 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T120  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 121 | gold=1721 opp_gold~=1781 | warriors=10 opp=10 =====
+T121  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 122 | gold=1821 opp_gold~=1881 | warriors=10 opp=10 =====
+T122  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 123 | gold=1921 opp_gold~=1981 | warriors=10 opp=10 =====
+T123  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 124 | gold=2023 opp_gold~=2083 | warriors=9 opp=9 =====
+T124  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 125 | gold=2003 opp_gold~=2053 | warriors=10 opp=10 =====
+T125  MOVE B28 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T125  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 126 | gold=2093 opp_gold~=2153 | warriors=10 opp=10 =====
+T126  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 127 | gold=2193 opp_gold~=2253 | warriors=10 opp=10 =====
+T127  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 128 | gold=2293 opp_gold~=2353 | warriors=10 opp=10 =====
+T128  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 129 | gold=2395 opp_gold~=2455 | warriors=9 opp=9 =====
+T129  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 130 | gold=2375 opp_gold~=2425 | warriors=10 opp=10 =====
+T130  MOVE B29 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T130  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 131 | gold=2465 opp_gold~=2525 | warriors=10 opp=10 =====
+T131  UPGRADE HQ R72 L3->4 (cost=2400)
+T131  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 132 | gold=165 opp_gold~=225 | warriors=10 opp=10 =====
+T132  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 133 | gold=158 opp_gold~=218 | warriors=11 opp=11 =====
+T133  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 134 | gold=273 opp_gold~=333 | warriors=10 opp=10 =====
+T134  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 135 | gold=266 opp_gold~=316 | warriors=11 opp=11 =====
+T135  MOVE B31 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T135  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 136 | gold=369 opp_gold~=429 | warriors=11 opp=11 =====
+T136  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 137 | gold=482 opp_gold~=542 | warriors=11 opp=11 =====
+T137  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 138 | gold=595 opp_gold~=655 | warriors=11 opp=11 =====
+T138  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 139 | gold=710 opp_gold~=770 | warriors=10 opp=10 =====
+T139  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 140 | gold=703 opp_gold~=753 | warriors=11 opp=11 =====
+T140  MOVE B32 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T140  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 141 | gold=806 opp_gold~=866 | warriors=11 opp=11 =====
+T141  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 142 | gold=919 opp_gold~=979 | warriors=11 opp=11 =====
+T142  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 143 | gold=1032 opp_gold~=1092 | warriors=11 opp=11 =====
+T143  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 144 | gold=1147 opp_gold~=1207 | warriors=10 opp=10 =====
+T144  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 145 | gold=1140 opp_gold~=1190 | warriors=11 opp=11 =====
+T145  MOVE B33 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T145  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 146 | gold=1243 opp_gold~=1303 | warriors=11 opp=11 =====
+T146  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 147 | gold=1356 opp_gold~=1416 | warriors=11 opp=11 =====
+T147  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 148 | gold=1469 opp_gold~=1529 | warriors=11 opp=11 =====
+T148  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 149 | gold=1582 opp_gold~=1642 | warriors=11 opp=11 =====
+T149  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 150 | gold=1575 opp_gold~=1625 | warriors=11 opp=11 =====
+T150  MOVE B34 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T150  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 151 | gold=1678 opp_gold~=1738 | warriors=11 opp=11 =====
+T151  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 152 | gold=1791 opp_gold~=1851 | warriors=11 opp=11 =====
+T152  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 153 | gold=1904 opp_gold~=1964 | warriors=11 opp=11 =====
+T153  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 154 | gold=2017 opp_gold~=2077 | warriors=11 opp=11 =====
+T154  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 155 | gold=2010 opp_gold~=2060 | warriors=11 opp=11 =====
+T155  MOVE B35 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T155  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 156 | gold=2113 opp_gold~=2173 | warriors=11 opp=11 =====
+T156  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 157 | gold=2226 opp_gold~=2286 | warriors=11 opp=11 =====
+T157  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 158 | gold=2339 opp_gold~=2399 | warriors=11 opp=11 =====
+T158  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 159 | gold=2452 opp_gold~=2512 | warriors=11 opp=11 =====
+T159  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 160 | gold=2445 opp_gold~=2495 | warriors=11 opp=11 =====
+T160  MOVE B36 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T160  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 161 | gold=2548 opp_gold~=2608 | warriors=11 opp=11 =====
+T161  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 162 | gold=2661 opp_gold~=2721 | warriors=11 opp=11 =====
+T162  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 163 | gold=2774 opp_gold~=2834 | warriors=11 opp=11 =====
+T163  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 164 | gold=2887 opp_gold~=2947 | warriors=11 opp=11 =====
+T164  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 165 | gold=2880 opp_gold~=2930 | warriors=11 opp=11 =====
+T165  MOVE B37 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T165  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 166 | gold=2983 opp_gold~=3043 | warriors=11 opp=11 =====
+T166  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 167 | gold=3096 opp_gold~=3156 | warriors=11 opp=11 =====
+T167  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 168 | gold=3209 opp_gold~=3269 | warriors=11 opp=11 =====
+T168  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 169 | gold=3322 opp_gold~=3382 | warriors=11 opp=11 =====
+T169  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 170 | gold=3315 opp_gold~=3365 | warriors=11 opp=11 =====
+T170  MOVE B38 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T170  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 171 | gold=3418 opp_gold~=3478 | warriors=11 opp=11 =====
+T171  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 172 | gold=3531 opp_gold~=3591 | warriors=11 opp=11 =====
+T172  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 173 | gold=3644 opp_gold~=3704 | warriors=11 opp=11 =====
+T173  UPGRADE HQ R72 L4->5 (cost=3600)
+T173  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 174 | gold=157 opp_gold~=217 | warriors=11 opp=11 =====
+T174  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 175 | gold=165 opp_gold~=215 | warriors=11 opp=11 =====
+T175  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 176 | gold=171 opp_gold~=221 | warriors=12 opp=12 =====
+T176  MOVE B40 72->36  [BUILD]  빈 거점 확보 파병 (hop=4)
+T176  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 177 | gold=287 opp_gold~=347 | warriors=12 opp=12 =====
+T177  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 178 | gold=413 opp_gold~=473 | warriors=12 opp=12 =====
+T178  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 179 | gold=539 opp_gold~=599 | warriors=12 opp=12 =====
+T179  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 180 | gold=667 opp_gold~=727 | warriors=11 opp=11 =====
+T180  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 181 | gold=795 opp_gold~=845 | warriors=11 opp=11 =====
+T181  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 182 | gold=923 opp_gold~=973 | warriors=11 opp=11 =====
+T182  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 183 | gold=1051 opp_gold~=1101 | warriors=11 opp=11 =====
+T183  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 184 | gold=1179 opp_gold~=1229 | warriors=11 opp=11 =====
+T184  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 185 | gold=1307 opp_gold~=1357 | warriors=11 opp=11 =====
+T185  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 186 | gold=1435 opp_gold~=1485 | warriors=11 opp=11 =====
+T186  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 187 | gold=1563 opp_gold~=1613 | warriors=11 opp=11 =====
+T187  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 188 | gold=1693 opp_gold~=1743 | warriors=10 opp=10 =====
+T188  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 189 | gold=1823 opp_gold~=1873 | warriors=10 opp=10 =====
+T189  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 190 | gold=1953 opp_gold~=2003 | warriors=10 opp=10 =====
+T190  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 191 | gold=2083 opp_gold~=2133 | warriors=10 opp=10 =====
+T191  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 192 | gold=2213 opp_gold~=2263 | warriors=10 opp=10 =====
+T192  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 193 | gold=2343 opp_gold~=2393 | warriors=10 opp=10 =====
+T193  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 194 | gold=2473 opp_gold~=2523 | warriors=10 opp=10 =====
+T194  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 195 | gold=2603 opp_gold~=2653 | warriors=10 opp=10 =====
+T195  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 196 | gold=2733 opp_gold~=2783 | warriors=10 opp=10 =====
+T196  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 197 | gold=2863 opp_gold~=2913 | warriors=10 opp=10 =====
+T197  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 198 | gold=2993 opp_gold~=3043 | warriors=10 opp=10 =====
+T198  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 199 | gold=3123 opp_gold~=3173 | warriors=10 opp=10 =====
+T199  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+==== TURN 199 | gold=8335 opp_gold~=8415 | warriors=13 opp=13 =====
+T199  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+ want=0 nNormal=0 nEmergency=0)
+===== TURN 199 | gold=10885 opp_gold~=10965 | warriors=14 opp=14 =====
+T199  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ===== TURN 171 | gold=844 opp_gold~=275 | warriors=52 opp=51 =====
+T171  MOVE B47 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T171  MOVE B52 44->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B63 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B74 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B75 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B76 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B77 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B80 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  MOVE B81 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T171  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 172 | gold=937 opp_gold~=183 | warriors=51 opp=51 =====
+T172  MOVE B66 50->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T172  MOVE B67 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T172  MOVE B68 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T172  MOVE B69 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T172  MOVE B70 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T172  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 173 | gold=1030 opp_gold~=265 | warriors=51 opp=49 =====
+T173  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 174 | gold=1125 opp_gold~=227 | warriors=50 opp=49 =====
+T174  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 175 | gold=1220 opp_gold~=189 | warriors=50 opp=49 =====
+T175  MOVE B52 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T175  MOVE B66 44->58  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T175  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 176 | gold=1315 opp_gold~=271 | warriors=50 opp=49 =====
+T176  MOVE B67 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T176  MOVE B68 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T176  MOVE B69 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T176  MOVE B71 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T176  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 177 | gold=1410 opp_gold~=231 | warriors=50 opp=50 =====
+T177  MOVE B70 45->58  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T177  MOVE B74 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B75 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B76 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B77 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B78 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B79 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B80 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B81 63->65  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B83 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T177  MOVE B84 92->79  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T177  MOVE B85 92->79  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T177  MOVE B86 92->79  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T177  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 178 | gold=1505 opp_gold~=311 | warriors=50 opp=50 =====
+T178  MOVE B66 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T178  MOVE B69 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T178  MOVE B71 45->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T178  MOVE B82 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T178  TRAIN 2 (평시; want=3 nNormal=2 nEmergency=2)
+===== TURN 179 | gold=1356 opp_gold~=391 | warriors=52 opp=50 =====
+T179  MOVE B70 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T179  MOVE B74 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T179  MOVE B75 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T179  MOVE B76 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T179  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 180 | gold=1447 opp_gold~=227 | warriors=52 opp=52 =====
+T180  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 181 | gold=1538 opp_gold~=303 | warriors=52 opp=52 =====
+T181  MOVE B70 79->58  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B71 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B74 79->58  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B75 63->65  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B76 63->65  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B77 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B78 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  MOVE B79 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T181  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 182 | gold=1629 opp_gold~=257 | warriors=52 opp=53 =====
+T182  MOVE B66 44->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B69 44->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B81 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B83 50->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B84 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B85 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B86 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T182  MOVE B87 100->92  [MOVE]  인력보충 best_help->R83 [위협예측:경유지]
+T182  MOVE B88 100->92  [MOVE]  인력보충 best_help->R83 [위협예측:경유지]
+T182  TRAIN 2 (평시; want=3 nNormal=2 nEmergency=2)
+===== TURN 183 | gold=1476 opp_gold~=209 | warriors=54 opp=54 =====
+T183  MOVE B71 44->58  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  MOVE B75 65->79  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  MOVE B76 65->79  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  MOVE B80 65->79  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  MOVE B89 100->92  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  MOVE B90 100->92  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T183  TRAIN 2 (평시; want=2 nNormal=2 nEmergency=2)
+===== TURN 184 | gold=1319 opp_gold~=281 | warriors=56 opp=54 =====
+T184  MOVE B70 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B74 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B77 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B78 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B79 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B83 65->63  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T184  MOVE B87 92->79  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B88 92->79  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B91 100->92  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  MOVE B92 100->92  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T184  TRAIN 2 (평시; want=3 nNormal=2 nEmergency=2)
+===== TURN 185 | gold=1158 opp_gold~=231 | warriors=58 opp=55 =====
+T185  MOVE B66 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T185  MOVE B69 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T185  MOVE B71 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T185  MOVE B84 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T185  MOVE B85 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T185  MOVE B86 65->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T185  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 186 | gold=1237 opp_gold~=301 | warriors=58 opp=55 =====
+T186  MOVE B70 45->58  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T186  MOVE B74 45->58  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T186  MOVE B75 79->65  [MOVE]  인력보충 best_help->R65 [위협예측:경유지]
+T186  MOVE B76 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B77 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T186  MOVE B78 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B79 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B80 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B87 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B88 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B89 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B90 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B91 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B92 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B93 100->92  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  MOVE B94 100->92  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T186  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 187 | gold=1316 opp_gold~=249 | warriors=58 opp=56 =====
+T187  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 188 | gold=1275 opp_gold~=271 | warriors=58 opp=54 =====
+T188  MOVE B74 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B76 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B80 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B81 63->65  [MOVE]  인력보충 best_help->R65 [위협예측:경유지]
+T188  MOVE B83 63->65  [MOVE]  인력보충 best_help->R65 [위협예측:경유지]
+T188  MOVE B87 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B88 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B89 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B90 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B91 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B92 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B93 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B94 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  MOVE B95 100->92  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T188  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 189 | gold=1356 opp_gold~=223 | warriors=57 opp=54 =====
+T189  MOVE B70 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T189  MOVE B75 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T189  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 190 | gold=1437 opp_gold~=177 | warriors=57 opp=53 =====
+T190  MOVE B76 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T190  MOVE B77 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T190  MOVE B78 44->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T190  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 191 | gold=1518 opp_gold~=251 | warriors=57 opp=53 =====
+T191  MOVE B70 45->58  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T191  MOVE B81 65->79  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T191  MOVE B83 65->79  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T191  MOVE B84 44->58  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T191  MOVE B85 44->58  [MOVE]  인력보충 best_help->R58 [위협예측:경유지]
+T191  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 192 | gold=1599 opp_gold~=203 | warriors=57 opp=54 =====
+T192  MOVE B75 50->65  [MOVE]  인력보충 best_help->R65 [위협예측:경유지]
+T192  MOVE B76 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B77 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B78 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B79 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B80 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B82 50->44  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B86 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B87 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B88 44->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B90 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B91 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B92 58->45  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B93 79->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B94 79->58  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  MOVE B95 92->79  [MOVE]  인력보충 best_help->R45 [위협예측:경유지]
+T192  TRAIN 2 (평시; want=3 nNormal=2 nEmergency=2)
+===== TURN 193 | gold=1436 opp_gold~=275 | warriors=59 opp=54 =====
+T193  MOVE B70 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T193  MOVE B84 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T193  MOVE B85 58->44  [MOVE]  인력보충 best_help->R44 [위협예측:경유지]
+T193  MOVE B89 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T193  MOVE B96 100->92  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T193  MOVE B97 100->92  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T193  TRAIN 2 (평시; want=2 nNormal=2 nEmergency=2)
+===== TURN 194 | gold=1269 opp_gold~=225 | warriors=61 opp=55 =====
+T194  MOVE B75 65->50  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T194  MOVE B79 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B80 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B81 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B82 44->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B83 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B86 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B87 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B88 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B90 45->58  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B91 45->58  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B92 45->58  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B93 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B94 58->79  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B95 79->65  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B98 100->92  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  MOVE B99 100->92  [MOVE]  인력보충 best_help->R63 [위협예측:경유지]
+T194  TRAIN 2 (평시; want=2 nNormal=2 nEmergency=2)
+===== TURN 195 | gold=1100 opp_gold~=297 | warriors=62 opp=54 =====
+T195  MOVE B89 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T195  MOVE B96 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T195  MOVE B97 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T195  MOVE B100 100->92  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T195  MOVE B101 100->92  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T195  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 196 | gold=1173 opp_gold~=209 | warriors=61 opp=54 =====
+T196  MOVE B79 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B80 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B86 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B87 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B88 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B90 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B91 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B92 58->44  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B93 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B94 79->58  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B98 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  MOVE B99 92->79  [MOVE]  인력보충 best_help->R50 [위협예측:경유지]
+T196  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 197 | gold=1246 opp_gold~=285 | warriors=61 opp=52 =====
+T197  MOVE B81 65->50  [ATTACK]  총공세 집결 ->R50 (경유지 R50)
+T197  MOVE B82 65->50  [ATTACK]  총공세 집결 ->R50 (경유지 R50)
+T197  MOVE B83 65->50  [ATTACK]  총공세 집결 ->R50 (경유지 R50)
+T197  MOVE B95 65->50  [ATTACK]  총공세 집결 ->R50 (경유지 R50)
+T197  MOVE B96 79->58  [ATTACK]  총공세 집결 ->R50 (경유지 R58)
+T197  MOVE B97 79->58  [ATTACK]  총공세 집결 ->R50 (경유지 R58)
+T197  MOVE B89 58->44  [ATTACK]  총공세 집결 ->R50 (경유지 R44)
+T197  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 198 | gold=1319 opp_gold~=241 | warriors=61 opp=52 =====
+T198  MOVE B79 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T198  MOVE B80 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T198  MOVE B86 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T198  MOVE B87 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T198  MOVE B88 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T198  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 199 | gold=1392 opp_gold~=195 | warriors=61 opp=53 =====
+T199  MOVE B84 44->58  [ATTACK]  총공세 집결 ->R45 (경유지 R58)
+T199  MOVE B93 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T199  MOVE B94 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T199  MOVE B96 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T199  MOVE B97 58->45  [ATTACK]  총공세 집결 ->R45 (경유지 R45)
+T199  TRAIN 0 (공세중; want=0 extraToTrain=0)

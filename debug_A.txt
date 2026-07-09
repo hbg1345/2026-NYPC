@@ -1,0 +1,672 @@
+===== TURN 0 | gold=500 opp_gold~=500 | warriors=3 opp=3 =====
+T0  MOVE A1 0->18  [BUILD]  빈 거점 확보 파병 (hop=2)
+T0  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 1 | gold=499 opp_gold~=509 | warriors=3 opp=3 =====
+T1  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 2 | gold=508 opp_gold~=518 | warriors=3 opp=3 =====
+T2  BUILD R18 신규 기지 건설(제자리, 상주=1)
+T2  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 3 | gold=232 opp_gold~=242 | warriors=3 opp=3 =====
+T3  MOVE A2 0->47  [BUILD]  빈 거점 확보 파병 (hop=4)
+T3  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 4 | gold=246 opp_gold~=266 | warriors=3 opp=3 =====
+T4  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 5 | gold=270 opp_gold~=290 | warriors=3 opp=3 =====
+T5  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 6 | gold=294 opp_gold~=314 | warriors=3 opp=3 =====
+T6  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 7 | gold=318 opp_gold~=338 | warriors=3 opp=3 =====
+T7  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 8 | gold=342 opp_gold~=230 | warriors=3 opp=4 =====
+T8  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 9 | gold=244 opp_gold~=252 | warriors=4 opp=4 =====
+T9  MOVE A3 0->26  [BUILD]  빈 거점 확보 파병 (hop=3)
+T9  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 10 | gold=258 opp_gold~=276 | warriors=3 opp=3 =====
+T10  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 11 | gold=282 opp_gold~=300 | warriors=3 opp=3 =====
+T11  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 12 | gold=306 opp_gold~=324 | warriors=3 opp=3 =====
+T12  BUILD R26 신규 기지 건설(제자리, 상주=1)
+T12  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 13 | gold=45 opp_gold~=348 | warriors=3 opp=3 =====
+T13  TRAIN 0 (평시; want=1 nNormal=0 nEmergency=0)
+===== TURN 14 | gold=84 opp_gold~=87 | warriors=3 opp=3 =====
+T14  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 15 | gold=123 opp_gold~=126 | warriors=3 opp=3 =====
+T15  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 16 | gold=162 opp_gold~=165 | warriors=3 opp=3 =====
+T16  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 17 | gold=201 opp_gold~=82 | warriors=3 opp=4 =====
+T17  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 18 | gold=118 opp_gold~=119 | warriors=4 opp=4 =====
+T18  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 19 | gold=155 opp_gold~=156 | warriors=4 opp=4 =====
+T19  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 20 | gold=192 opp_gold~=193 | warriors=4 opp=4 =====
+T20  MOVE A4 0->32  [BUILD]  빈 거점 확보 파병 (hop=4)
+T20  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 21 | gold=219 opp_gold~=230 | warriors=4 opp=4 =====
+T21  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 22 | gold=256 opp_gold~=267 | warriors=4 opp=4 =====
+T22  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 23 | gold=293 opp_gold~=304 | warriors=4 opp=4 =====
+T23  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 24 | gold=330 opp_gold~=341 | warriors=4 opp=4 =====
+T24  BUILD R32 신규 기지 건설(제자리, 상주=1)
+T24  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 25 | gold=82 opp_gold~=93 | warriors=4 opp=4 =====
+T25  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 26 | gold=134 opp_gold~=145 | warriors=4 opp=4 =====
+T26  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 27 | gold=186 opp_gold~=197 | warriors=4 opp=4 =====
+T27  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 28 | gold=238 opp_gold~=127 | warriors=4 opp=5 =====
+T28  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 29 | gold=168 opp_gold~=177 | warriors=5 opp=5 =====
+T29  MOVE A5 0->13  [BUILD]  빈 거점 확보 파병 (hop=3)
+T29  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 30 | gold=208 opp_gold~=227 | warriors=5 opp=5 =====
+T30  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 31 | gold=258 opp_gold~=277 | warriors=5 opp=5 =====
+T31  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 32 | gold=308 opp_gold~=327 | warriors=5 opp=5 =====
+T32  BUILD R13 신규 기지 건설(제자리, 상주=1)
+T32  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 33 | gold=73 opp_gold~=377 | warriors=5 opp=5 =====
+T33  TRAIN 0 (평시; want=1 nNormal=0 nEmergency=0)
+===== TURN 34 | gold=138 opp_gold~=142 | warriors=5 opp=5 =====
+T34  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 35 | gold=203 opp_gold~=207 | warriors=5 opp=5 =====
+T35  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 36 | gold=268 opp_gold~=150 | warriors=5 opp=6 =====
+T36  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 37 | gold=211 opp_gold~=213 | warriors=6 opp=6 =====
+T37  MOVE A6 0->7  [BUILD]  빈 거점 확보 파병 (hop=2)
+T37  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 38 | gold=264 opp_gold~=276 | warriors=6 opp=6 =====
+T38  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 39 | gold=327 opp_gold~=339 | warriors=6 opp=6 =====
+T39  BUILD R7 신규 기지 건설(제자리, 상주=1)
+T39  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 40 | gold=105 opp_gold~=402 | warriors=6 opp=6 =====
+T40  TRAIN 0 (평시; want=1 nNormal=0 nEmergency=0)
+===== TURN 41 | gold=183 opp_gold~=180 | warriors=6 opp=6 =====
+T41  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 42 | gold=139 opp_gold~=136 | warriors=7 opp=7 =====
+T42  MOVE A7 0->2  [BUILD]  빈 거점 확보 파병 (hop=3)
+T42  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 43 | gold=205 opp_gold~=212 | warriors=7 opp=7 =====
+T43  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 44 | gold=281 opp_gold~=288 | warriors=7 opp=7 =====
+T44  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 45 | gold=357 opp_gold~=364 | warriors=7 opp=7 =====
+T45  BUILD R2 신규 기지 건설(제자리, 상주=1)
+T45  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 46 | gold=148 opp_gold~=155 | warriors=7 opp=7 =====
+T46  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 47 | gold=239 opp_gold~=246 | warriors=7 opp=7 =====
+T47  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 48 | gold=208 opp_gold~=215 | warriors=8 opp=8 =====
+T48  MOVE A8 0->15  [BUILD]  빈 거점 확보 파병 (hop=2)
+T48  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 49 | gold=287 opp_gold~=304 | warriors=8 opp=8 =====
+T49  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 50 | gold=376 opp_gold~=393 | warriors=8 opp=8 =====
+T50  BUILD R15 신규 기지 건설(제자리, 상주=1)
+T50  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 51 | gold=180 opp_gold~=197 | warriors=8 opp=8 =====
+T51  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 52 | gold=162 opp_gold~=179 | warriors=9 opp=9 =====
+T52  MOVE A9 0->92  [BUILD]  빈 거점 확보 파병 (hop=9)
+T52  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 53 | gold=254 opp_gold~=281 | warriors=9 opp=9 =====
+T53  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 54 | gold=356 opp_gold~=383 | warriors=9 opp=9 =====
+T54  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 55 | gold=458 opp_gold~=485 | warriors=9 opp=9 =====
+T55  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=0)
+===== TURN 56 | gold=438 opp_gold~=302 | warriors=10 opp=9 =====
+T56  MOVE A11 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T56  TRAIN 1 (공세중; want=7 extraToTrain=7)
+===== TURN 57 | gold=416 opp_gold~=297 | warriors=11 opp=10 =====
+T57  MOVE A12 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T57  TRAIN 1 (공세중; want=6 extraToTrain=6)
+===== TURN 58 | gold=392 opp_gold~=290 | warriors=12 opp=11 =====
+T58  MOVE A11 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T58  MOVE A13 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T58  TRAIN 1 (공세중; want=5 extraToTrain=5)
+===== TURN 59 | gold=366 opp_gold~=281 | warriors=13 opp=12 =====
+T59  MOVE A12 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T59  MOVE A14 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T59  TRAIN 1 (공세중; want=4 extraToTrain=4)
+===== TURN 60 | gold=338 opp_gold~=270 | warriors=14 opp=13 =====
+T60  MOVE A13 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T60  MOVE A15 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T60  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 61 | gold=308 opp_gold~=257 | warriors=15 opp=14 =====
+T61  MOVE A14 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T61  MOVE A16 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T61  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 62 | gold=278 opp_gold~=242 | warriors=15 opp=15 =====
+T62  MOVE A15 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T62  MOVE A17 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T62  TRAIN 1 (공세중; want=1 extraToTrain=1)
+===== TURN 63 | gold=246 opp_gold~=225 | warriors=16 opp=16 =====
+T63  MOVE A16 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T63  MOVE A18 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T63  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 64 | gold=212 opp_gold~=206 | warriors=17 opp=17 =====
+T64  MOVE A11 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  MOVE A12 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  MOVE A13 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  MOVE A14 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  MOVE A15 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  MOVE A17 18->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T64  MOVE A19 0->7  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T64  TRAIN 1 (평시; want=3 nNormal=1 nEmergency=1)
+===== TURN 65 | gold=176 opp_gold~=185 | warriors=18 opp=18 =====
+T65  MOVE A16 32->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T65  MOVE A20 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T65  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 66 | gold=260 opp_gold~=284 | warriors=18 opp=18 =====
+T66  MOVE A11 13->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T66  MOVE A12 13->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T66  MOVE A13 13->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T66  MOVE A14 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T66  MOVE A15 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T66  MOVE A19 7->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T66  TRAIN 1 (공세중; want=5 extraToTrain=5)
+===== TURN 67 | gold=222 opp_gold~=261 | warriors=19 opp=19 =====
+T67  MOVE A18 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T67  MOVE A20 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T67  MOVE A21 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T67  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 68 | gold=182 opp_gold~=236 | warriors=20 opp=20 =====
+T68  MOVE A16 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T68  MOVE A22 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T68  MOVE A17 2->0  [ATTACK]  총공세 집결 ->R32 (경유지 R0)
+T68  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 69 | gold=140 opp_gold~=209 | warriors=21 opp=21 =====
+T69  MOVE A21 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T69  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 70 | gold=218 opp_gold~=180 | warriors=21 opp=22 =====
+T70  MOVE A11 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A12 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A13 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A14 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A15 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A19 26->13  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T70  MOVE A20 32->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T70  MOVE A22 18->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T70  MOVE A23 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T70  TRAIN 1 (공세중; want=5 extraToTrain=5)
+===== TURN 71 | gold=174 opp_gold~=271 | warriors=22 opp=22 =====
+T71  MOVE A16 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T71  MOVE A17 0->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T71  MOVE A18 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T71  MOVE A24 0->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T71  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 72 | gold=128 opp_gold~=240 | warriors=23 opp=23 =====
+T72  MOVE A11 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A12 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A13 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A14 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A15 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A19 13->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A23 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T72  MOVE A25 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T72  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 73 | gold=202 opp_gold~=207 | warriors=23 opp=24 =====
+T73  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 74 | gold=276 opp_gold~=294 | warriors=23 opp=24 =====
+T74  MOVE A24 26->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T74  MOVE A25 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T74  MOVE A22 2->0  [ATTACK]  총공세 집결 ->R32 (경유지 R0)
+T74  TRAIN 1 (공세중; want=5 extraToTrain=5)
+===== TURN 75 | gold=228 opp_gold~=259 | warriors=24 opp=25 =====
+T75  MOVE A13 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T75  MOVE A14 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T75  MOVE A15 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T75  MOVE A16 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T75  MOVE A17 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T75  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 76 | gold=250 opp_gold~=344 | warriors=24 opp=25 =====
+T76  MOVE A11 26->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T76  MOVE A12 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T76  MOVE A18 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T76  MOVE A19 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T76  MOVE A21 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T76  MOVE A23 26->47  [ATTACK]  총공세 돌격 (집결완료 5명)
+T76  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 77 | gold=274 opp_gold~=431 | warriors=23 opp=24 =====
+T77  MOVE A20 2->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T77  MOVE A22 0->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T77  MOVE A24 18->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T77  MOVE A25 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T77  MOVE A26 0->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T77  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 78 | gold=350 opp_gold~=522 | warriors=22 opp=22 =====
+T78  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 79 | gold=430 opp_gold~=495 | warriors=20 opp=21 =====
+T79  MOVE A11 2->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T79  TRAIN 1 (평시; want=2 nNormal=1 nEmergency=1)
+===== TURN 80 | gold=394 opp_gold~=592 | warriors=18 opp=19 =====
+T80  MOVE A24 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T80  MOVE A26 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T80  MOVE A27 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T80  TRAIN 1 (공세중; want=12 extraToTrain=12)
+===== TURN 81 | gold=360 opp_gold~=689 | warriors=17 opp=19 =====
+T81  MOVE A28 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T81  TRAIN 1 (평시; want=2 nNormal=1 nEmergency=1)
+===== TURN 82 | gold=326 opp_gold~=203 | warriors=17 opp=18 =====
+T82  MOVE A24 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T82  MOVE A26 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T82  MOVE A27 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T82  MOVE A29 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T82  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0 HQ열세->0)
+===== TURN 83 | gold=412 opp_gold~=317 | warriors=17 opp=18 =====
+T83  MOVE A22 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T83  MOVE A25 26->47  [ATTACK]  총공세 돌격 (집결완료 1명)
+T83  TRAIN 0 (공세중; want=0 extraToTrain=9)
+===== TURN 84 | gold=488 opp_gold~=309 | warriors=17 opp=19 =====
+T84  MOVE A11 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T84  MOVE A24 26->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T84  MOVE A26 26->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T84  MOVE A27 26->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T84  MOVE A28 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T84  MOVE A29 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T84  TRAIN 0 (공세중; want=0 extraToTrain=4)
+===== TURN 85 | gold=563 opp_gold~=299 | warriors=15 opp=20 =====
+T85  MOVE A22 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T85  TRAIN 0 (평시; want=4 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 86 | gold=655 opp_gold~=229 | warriors=14 opp=20 =====
+T86  UPGRADE HQ R0 L1->2 (cost=600)
+T86  MOVE A20 26->47  [ATTACK]  총공세 돌격 (집결완료 1명)
+T86  TRAIN 0 (공세중; want=0 extraToTrain=7)
+===== TURN 87 | gold=139 opp_gold~=219 | warriors=13 opp=20 =====
+T87  TRAIN 1 (평시; want=5 nNormal=1 nEmergency=1)
+===== TURN 88 | gold=128 opp_gold~=333 | warriors=13 opp=18 =====
+T88  TRAIN 1 (평시; want=5 nNormal=1 nEmergency=1)
+===== TURN 89 | gold=119 opp_gold~=449 | warriors=12 opp=17 =====
+T89  MOVE A31 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T89  TRAIN 0 (평시; want=4 nNormal=0 nEmergency=0)
+===== TURN 90 | gold=230 opp_gold~=567 | warriors=12 opp=16 =====
+T90  MOVE A27 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T90  MOVE A29 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T90  TRAIN 1 (평시; want=3 nNormal=1 nEmergency=1)
+===== TURN 91 | gold=219 opp_gold~=685 | warriors=13 opp=16 =====
+T91  MOVE A31 18->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T91  MOVE A32 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T91  TRAIN 1 (공세중; want=7 extraToTrain=7)
+===== TURN 92 | gold=206 opp_gold~=803 | warriors=14 opp=16 =====
+T92  MOVE A33 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T92  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 93 | gold=191 opp_gold~=921 | warriors=15 opp=16 =====
+T93  MOVE A32 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T93  MOVE A34 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T93  TRAIN 1 (공세중; want=7 extraToTrain=7)
+===== TURN 94 | gold=174 opp_gold~=1039 | warriors=16 opp=16 =====
+T94  MOVE A33 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T94  MOVE A35 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T94  TRAIN 1 (공세중; want=4 extraToTrain=4)
+===== TURN 95 | gold=155 opp_gold~=1035 | warriors=17 opp=17 =====
+T95  MOVE A34 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T95  MOVE A36 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T95  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 96 | gold=134 opp_gold~=1029 | warriors=18 opp=18 =====
+T96  MOVE A33 32->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T96  MOVE A35 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T96  MOVE A37 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T96  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 97 | gold=111 opp_gold~=1021 | warriors=19 opp=19 =====
+T97  MOVE A34 32->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T97  MOVE A36 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T97  MOVE A38 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T97  TRAIN 0 (공세중; want=1 extraToTrain=1)
+===== TURN 98 | gold=208 opp_gold~=1011 | warriors=19 opp=20 =====
+T98  MOVE A32 26->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T98  MOVE A35 26->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T98  MOVE A33 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T98  MOVE A37 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T98  TRAIN 1 (공세중; want=1 extraToTrain=1)
+===== TURN 99 | gold=183 opp_gold~=1121 | warriors=20 opp=20 =====
+T99  MOVE A34 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T99  MOVE A38 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T99  MOVE A39 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T99  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 100 | gold=156 opp_gold~=1109 | warriors=21 opp=21 =====
+T100  MOVE A32 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T100  MOVE A35 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T100  MOVE A40 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T100  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 101 | gold=249 opp_gold~=1095 | warriors=21 opp=22 =====
+T101  MOVE A39 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T101  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 102 | gold=342 opp_gold~=1079 | warriors=21 opp=23 =====
+T102  MOVE A32 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  MOVE A33 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  MOVE A34 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  MOVE A35 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  MOVE A37 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  MOVE A38 32->68  [ATTACK]  총공세 돌격 (집결완료 6명)
+T102  TRAIN 1 (공세중; want=1 extraToTrain=0)
+===== TURN 103 | gold=253 opp_gold~=1061 | warriors=22 opp=24 =====
+T103  MOVE A39 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T103  MOVE A40 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T103  MOVE A41 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T103  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 104 | gold=222 opp_gold~=1163 | warriors=23 opp=24 =====
+T104  MOVE A42 0->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T104  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 105 | gold=189 opp_gold~=1265 | warriors=24 opp=24 =====
+T105  MOVE A41 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T105  MOVE A43 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T105  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0)
+===== TURN 106 | gold=278 opp_gold~=1247 | warriors=23 opp=24 =====
+T106  MOVE A40 32->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T106  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 107 | gold=247 opp_gold~=1229 | warriors=23 opp=24 =====
+T107  MOVE A43 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T107  MOVE A44 0->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T107  TRAIN 1 (평시; want=1 nNormal=1 nEmergency=1)
+===== TURN 108 | gold=218 opp_gold~=1333 | warriors=22 opp=23 =====
+T108  MOVE A40 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T108  MOVE A45 0->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T108  TRAIN 1 (공세중; want=5 extraToTrain=5)
+===== TURN 109 | gold=191 opp_gold~=252 | warriors=21 opp=23 =====
+T109  MOVE A41 32->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T109  MOVE A42 32->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T109  MOVE A43 32->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T109  MOVE A46 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T109  TRAIN 0 (평시; want=0 nNormal=0 nEmergency=0 HQ열세->0)
+===== TURN 110 | gold=284 opp_gold~=249 | warriors=21 opp=24 =====
+T110  MOVE A39 26->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T110  MOVE A44 26->18  [ATTACK]  총공세 집결 ->R32 (경유지 R18)
+T110  MOVE A45 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T110  TRAIN 0 (공세중; want=0 extraToTrain=3)
+===== TURN 111 | gold=377 opp_gold~=244 | warriors=21 opp=25 =====
+T111  MOVE A40 32->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T111  MOVE A41 18->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T111  MOVE A42 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T111  MOVE A43 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T111  MOVE A46 18->32  [ATTACK]  총공세 집결 ->R32 (경유지 R32)
+T111  TRAIN 0 (공세중; want=0 extraToTrain=2)
+===== TURN 112 | gold=470 opp_gold~=359 | warriors=21 opp=25 =====
+T112  MOVE A39 18->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T112  MOVE A44 18->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T112  MOVE A45 32->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T112  TRAIN 0 (평시; want=3 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 113 | gold=563 opp_gold~=474 | warriors=21 opp=25 =====
+T113  MOVE A42 32->68  [ATTACK]  총공세 돌격 (집결완료 3명)
+T113  MOVE A43 32->68  [ATTACK]  총공세 돌격 (집결완료 3명)
+T113  MOVE A46 32->68  [ATTACK]  총공세 돌격 (집결완료 3명)
+T113  TRAIN 0 (공세중; want=0 extraToTrain=4)
+===== TURN 114 | gold=613 opp_gold~=345 | warriors=20 opp=27 =====
+T114  MOVE A31 26->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T114  MOVE A36 26->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T114  MOVE A41 26->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T114  TRAIN 0 (평시; want=5 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 115 | gold=693 opp_gold~=284 | warriors=20 opp=28 =====
+T115  TRAIN 0 (평시; want=6 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 116 | gold=775 opp_gold~=395 | warriors=19 opp=27 =====
+T116  TRAIN 0 (평시; want=6 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 117 | gold=857 opp_gold~=510 | warriors=19 opp=25 =====
+T117  TRAIN 0 (평시; want=5 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 118 | gold=943 opp_gold~=383 | warriors=17 opp=26 =====
+T118  MOVE A29 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T118  MOVE A40 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T118  TRAIN 0 (평시; want=8 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 119 | gold=1031 opp_gold~=256 | warriors=16 opp=26 =====
+T119  TRAIN 0 (평시; want=10 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 120 | gold=1108 opp_gold~=371 | warriors=14 opp=25 =====
+T120  MOVE A29 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T120  MOVE A40 18->32  [MOVE]  인력보충 best_help->R32 [위협임박:직행]
+T120  MOVE A41 13->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T120  MOVE A44 13->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T120  MOVE A45 13->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T120  BUILD R13 신규 기지 건설(제자리, 상주=3)
+T120  TRAIN 0 (평시; want=9 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 121 | gold=887 opp_gold~=336 | warriors=13 opp=25 =====
+T121  TRAIN 0 (평시; want=10 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 122 | gold=981 opp_gold~=331 | warriors=13 opp=25 =====
+T122  TRAIN 0 (평시; want=11 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 123 | gold=1077 opp_gold~=324 | warriors=12 opp=26 =====
+T123  TRAIN 0 (평시; want=13 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 124 | gold=1160 opp_gold~=277 | warriors=11 opp=26 =====
+T124  MOVE A45 26->13  [MOVE]  인력보충 best_help->R13 [위협임박:직행]
+T124  TRAIN 0 (평시; want=13 nNormal=1 nEmergency=1 HQ열세->0)
+===== TURN 125 | gold=1243 opp_gold~=380 | warriors=11 opp=26 =====
+T125  UPGRADE HQ R0 L2->3 (cost=1200)
+T125  TRAIN 0 (평시; want=13 nNormal=0 nEmergency=0 HQ열세->0)
+===== TURN 126 | gold=128 opp_gold~=229 | warriors=10 opp=28 =====
+T126  TRAIN 1 (평시; want=13 nNormal=1 nEmergency=1)
+===== TURN 127 | gold=106 opp_gold~=338 | warriors=11 opp=28 =====
+T127  TRAIN 0 (평시; want=13 nNormal=0 nEmergency=0)
+===== TURN 128 | gold=204 opp_gold~=417 | warriors=11 opp=28 =====
+T128  TRAIN 1 (평시; want=13 nNormal=1 nEmergency=1)
+===== TURN 129 | gold=180 opp_gold~=241 | warriors=12 opp=28 =====
+T129  MOVE A48 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T129  TRAIN 1 (평시; want=12 nNormal=1 nEmergency=1)
+===== TURN 130 | gold=154 opp_gold~=365 | warriors=13 opp=28 =====
+T130  MOVE A49 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T130  TRAIN 1 (평시; want=11 nNormal=1 nEmergency=1)
+===== TURN 131 | gold=126 opp_gold~=489 | warriors=14 opp=28 =====
+T131  MOVE A48 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T131  MOVE A50 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T131  TRAIN 1 (평시; want=10 nNormal=1 nEmergency=1)
+===== TURN 132 | gold=96 opp_gold~=613 | warriors=15 opp=28 =====
+T132  MOVE A49 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T132  MOVE A51 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T132  TRAIN 0 (평시; want=9 nNormal=0 nEmergency=0)
+===== TURN 133 | gold=186 opp_gold~=452 | warriors=15 opp=28 =====
+T133  MOVE A50 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T133  TRAIN 1 (평시; want=8 nNormal=1 nEmergency=1)
+===== TURN 134 | gold=154 opp_gold~=591 | warriors=16 opp=28 =====
+T134  MOVE A51 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T134  MOVE A52 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T134  TRAIN 1 (평시; want=7 nNormal=1 nEmergency=1)
+===== TURN 135 | gold=120 opp_gold~=730 | warriors=17 opp=28 =====
+T135  MOVE A53 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T135  TRAIN 1 (평시; want=6 nNormal=1 nEmergency=1)
+===== TURN 136 | gold=84 opp_gold~=869 | warriors=18 opp=28 =====
+T136  MOVE A52 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T136  MOVE A54 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T136  TRAIN 0 (평시; want=5 nNormal=0 nEmergency=0)
+===== TURN 137 | gold=168 opp_gold~=1008 | warriors=18 opp=28 =====
+T137  MOVE A53 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T137  TRAIN 1 (평시; want=5 nNormal=1 nEmergency=1)
+===== TURN 138 | gold=130 opp_gold~=1147 | warriors=19 opp=28 =====
+T138  MOVE A54 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T138  MOVE A55 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T138  TRAIN 1 (평시; want=4 nNormal=1 nEmergency=1)
+===== TURN 139 | gold=90 opp_gold~=1286 | warriors=20 opp=28 =====
+T139  MOVE A56 0->18  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T139  TRAIN 0 (평시; want=3 nNormal=0 nEmergency=0)
+===== TURN 140 | gold=170 opp_gold~=1425 | warriors=20 opp=28 =====
+T140  MOVE A55 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T140  TRAIN 1 (평시; want=3 nNormal=1 nEmergency=1)
+===== TURN 141 | gold=128 opp_gold~=1564 | warriors=21 opp=28 =====
+T141  MOVE A56 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T141  MOVE A57 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T141  TRAIN 1 (공세중; want=9 extraToTrain=9)
+===== TURN 142 | gold=84 opp_gold~=1703 | warriors=22 opp=28 =====
+T142  MOVE A58 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T142  TRAIN 0 (공세중; want=8 extraToTrain=8)
+===== TURN 143 | gold=160 opp_gold~=1842 | warriors=22 opp=28 =====
+T143  MOVE A57 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T143  TRAIN 1 (공세중; want=8 extraToTrain=8)
+===== TURN 144 | gold=114 opp_gold~=1981 | warriors=23 opp=28 =====
+T144  MOVE A58 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T144  MOVE A59 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T144  TRAIN 0 (공세중; want=4 extraToTrain=4)
+===== TURN 145 | gold=188 opp_gold~=1998 | warriors=23 opp=29 =====
+T145  MOVE A56 26->68  [ATTACK]  총공세 돌격 (집결완료 2명)
+T145  MOVE A57 26->68  [ATTACK]  총공세 돌격 (집결완료 2명)
+T145  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 146 | gold=120 opp_gold~=2135 | warriors=24 opp=29 =====
+T146  MOVE A58 26->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T146  MOVE A60 0->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T146  TRAIN 1 (공세중; want=2 extraToTrain=2)
+===== TURN 147 | gold=74 opp_gold~=2152 | warriors=23 opp=29 =====
+T147  MOVE A55 26->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T147  MOVE A61 0->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T147  TRAIN 0 (공세중; want=2 extraToTrain=2)
+===== TURN 148 | gold=148 opp_gold~=2289 | warriors=23 opp=29 =====
+T148  MOVE A58 18->32  [ATTACK]  총공세 돌격 (집결완료 3명)
+T148  MOVE A59 18->32  [ATTACK]  총공세 돌격 (집결완료 3명)
+T148  MOVE A60 18->32  [ATTACK]  총공세 돌격 (집결완료 3명)
+T148  TRAIN 0 (공세중; want=2 extraToTrain=2)
+===== TURN 149 | gold=192 opp_gold~=2426 | warriors=23 opp=29 =====
+T149  MOVE A55 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T149  MOVE A61 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T149  TRAIN 1 (공세중; want=3 extraToTrain=3)
+===== TURN 150 | gold=144 opp_gold~=2319 | warriors=24 opp=31 =====
+T150  MOVE A62 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T150  TRAIN 1 (공세중; want=3 extraToTrain=2)
+===== TURN 151 | gold=94 opp_gold~=2195 | warriors=25 opp=32 =====
+T151  MOVE A53 26->7  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T151  MOVE A54 26->7  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T151  MOVE A55 26->7  [MOVE]  인력보충 best_help->R2 [위협예측:경유지]
+T151  MOVE A58 32->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T151  MOVE A59 32->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T151  MOVE A60 32->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T151  MOVE A61 26->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T151  MOVE A63 0->18  [ATTACK]  총공세 집결 ->R18 (경유지 R18)
+T151  TRAIN 0 (공세중; want=4 extraToTrain=3)
+===== TURN 152 | gold=164 opp_gold~=2326 | warriors=25 opp=32 =====
+T152  MOVE A62 18->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T152  TRAIN 1 (평시; want=3 nNormal=1 nEmergency=1)
+===== TURN 153 | gold=112 opp_gold~=2457 | warriors=26 opp=32 =====
+T153  MOVE A53 7->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T153  MOVE A54 7->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T153  MOVE A55 7->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T153  MOVE A61 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T153  MOVE A64 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T153  MOVE A63 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T153  TRAIN 0 (공세중; want=5 extraToTrain=5)
+===== TURN 154 | gold=180 opp_gold~=2588 | warriors=26 opp=32 =====
+T154  TRAIN 1 (평시; want=2 nNormal=1 nEmergency=1)
+===== TURN 155 | gold=126 opp_gold~=334 | warriors=27 opp=32 =====
+T155  MOVE A64 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T155  MOVE A65 0->18  [ATTACK]  총공세 집결 ->R26 (경유지 R18)
+T155  TRAIN 0 (공세중; want=0 extraToTrain=1)
+===== TURN 156 | gold=192 opp_gold~=236 | warriors=27 opp=34 =====
+T156  MOVE A53 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T156  MOVE A54 26->13  [ATTACK]  총공세 돌격 (집결완료 5명)
+T156  MOVE A55 26->13  [ATTACK]  총공세 돌격 (집결완료 5명)
+T156  MOVE A61 26->13  [ATTACK]  총공세 돌격 (집결완료 5명)
+T156  MOVE A62 26->13  [ATTACK]  총공세 돌격 (집결완료 5명)
+T156  MOVE A63 26->13  [ATTACK]  총공세 돌격 (집결완료 5명)
+T156  TRAIN 0 (공세중; want=0 extraToTrain=1)
+===== TURN 157 | gold=208 opp_gold~=378 | warriors=27 opp=34 =====
+T157  MOVE A59 2->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T157  MOVE A60 2->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T157  TRAIN 0 (공세중; want=0 extraToTrain=0)
+===== TURN 158 | gold=274 opp_gold~=268 | warriors=27 opp=35 =====
+T158  MOVE A51 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T158  MOVE A58 2->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T158  TRAIN 0 (공세중; want=0 extraToTrain=2)
+===== TURN 159 | gold=340 opp_gold~=395 | warriors=27 opp=34 =====
+T159  MOVE A54 13->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T159  TRAIN 0 (평시; want=4 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 160 | gold=406 opp_gold~=415 | warriors=27 opp=35 =====
+T160  MOVE A60 26->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T160  MOVE A65 18->26  [ATTACK]  총공세 집결 ->R26 (경유지 R26)
+T160  TRAIN 0 (공세중; want=0 extraToTrain=4)
+===== TURN 161 | gold=474 opp_gold~=435 | warriors=26 opp=35 =====
+T161  MOVE A59 26->68  [ATTACK]  총공세 돌격 (집결완료 2명)
+T161  MOVE A64 26->68  [ATTACK]  총공세 돌격 (집결완료 2명)
+T161  TRAIN 0 (공세중; want=0 extraToTrain=4)
+===== TURN 162 | gold=524 opp_gold~=331 | warriors=25 opp=37 =====
+T162  TRAIN 0 (평시; want=9 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 163 | gold=600 opp_gold~=471 | warriors=22 opp=35 =====
+T163  MOVE A54 18->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T163  TRAIN 0 (평시; want=10 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 164 | gold=678 opp_gold~=367 | warriors=21 opp=37 =====
+T164  MOVE A53 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T164  TRAIN 0 (평시; want=14 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 165 | gold=756 opp_gold~=503 | warriors=21 opp=37 =====
+T165  TRAIN 0 (평시; want=14 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 166 | gold=821 opp_gold~=639 | warriors=20 opp=37 =====
+T166  MOVE A60 2->7  [MOVE]  인력보충 best_help->R7 [위협임박:직행]
+T166  TRAIN 0 (평시; want=13 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 167 | gold=886 opp_gold~=603 | warriors=20 opp=38 =====
+T167  TRAIN 0 (평시; want=14 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 168 | gold=951 opp_gold~=452 | warriors=20 opp=38 =====
+T168  TRAIN 0 (평시; want=14 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 169 | gold=1018 opp_gold~=601 | warriors=19 opp=38 =====
+T169  MOVE A51 18->26  [MOVE]  인력보충 best_help->R26 [위협예측:경유지]
+T169  TRAIN 0 (평시; want=15 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 170 | gold=1085 opp_gold~=750 | warriors=19 opp=38 =====
+T170  TRAIN 0 (평시; want=15 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 171 | gold=1139 opp_gold~=899 | warriors=18 opp=38 =====
+T171  MOVE A58 26->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T171  MOVE A65 26->2  [MOVE]  인력보충 best_help->R2 [위협임박:직행]
+T171  TRAIN 0 (평시; want=14 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 172 | gold=1193 opp_gold~=876 | warriors=18 opp=39 =====
+T172  TRAIN 0 (평시; want=15 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 173 | gold=1247 opp_gold~=738 | warriors=18 opp=39 =====
+T173  TRAIN 0 (평시; want=15 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 174 | gold=1301 opp_gold~=900 | warriors=18 opp=39 =====
+T174  TRAIN 0 (평시; want=15 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 175 | gold=1357 opp_gold~=1062 | warriors=17 opp=39 =====
+T175  MOVE A54 26->15  [MOVE]  인력보충 best_help->R15 [위협임박:직행]
+T175  MOVE A58 18->15  [MOVE]  인력보충 best_help->R15 [위협임박:직행]
+T175  TRAIN 0 (평시; want=16 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 176 | gold=1413 opp_gold~=980 | warriors=17 opp=41 =====
+T176  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 177 | gold=1469 opp_gold~=1138 | warriors=17 opp=41 =====
+T177  MOVE A58 15->18  [MOVE]  인력보충 best_help->R18 [위협임박:직행]
+T177  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 178 | gold=1525 opp_gold~=1296 | warriors=17 opp=41 =====
+T178  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 179 | gold=1581 opp_gold~=1454 | warriors=17 opp=41 =====
+T179  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 180 | gold=1637 opp_gold~=1612 | warriors=17 opp=41 =====
+T180  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 181 | gold=1695 opp_gold~=1770 | warriors=16 opp=41 =====
+T181  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 182 | gold=1740 opp_gold~=1878 | warriors=15 opp=41 =====
+T182  TRAIN 0 (평시; want=17 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 183 | gold=1785 opp_gold~=2036 | warriors=15 opp=41 =====
+T183  MOVE A53 26->15  [MOVE]  인력보충 best_help->R15 [위협임박:직행]
+T183  TRAIN 0 (평시; want=17 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 184 | gold=1830 opp_gold~=2194 | warriors=15 opp=41 =====
+T184  TRAIN 0 (평시; want=17 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 185 | gold=1875 opp_gold~=2354 | warriors=15 opp=40 =====
+T185  TRAIN 0 (평시; want=17 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 186 | gold=1909 opp_gold~=2514 | warriors=13 opp=40 =====
+T186  MOVE A52 26->15  [MOVE]  인력보충 best_help->R15 [위협임박:직행]
+T186  TRAIN 0 (평시; want=17 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 187 | gold=1945 opp_gold~=2614 | warriors=12 opp=40 =====
+T187  TRAIN 0 (평시; want=18 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 188 | gold=1981 opp_gold~=2652 | warriors=12 opp=41 =====
+T188  MOVE A50 26->13  [ATTACK]  총공세 돌격 (집결완료 2명)
+T188  MOVE A51 26->13  [ATTACK]  총공세 돌격 (집결완료 2명)
+T188  TRAIN 0 (공세중; want=0 extraToTrain=5)
+===== TURN 189 | gold=1997 opp_gold~=2810 | warriors=12 opp=41 =====
+T189  TRAIN 0 (평시; want=20 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 190 | gold=2035 opp_gold~=2898 | warriors=11 opp=41 =====
+T190  TRAIN 0 (평시; want=20 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 191 | gold=2073 opp_gold~=3043 | warriors=11 opp=40 =====
+T191  MOVE A50 13->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T191  MOVE A51 13->26  [MOVE]  인력보충 best_help->R26 [위협임박:직행]
+T191  TRAIN 0 (평시; want=20 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 192 | gold=2111 opp_gold~=3203 | warriors=11 opp=40 =====
+T192  TRAIN 0 (평시; want=19 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 193 | gold=2151 opp_gold~=3109 | warriors=10 opp=42 =====
+T193  TRAIN 0 (평시; want=21 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 194 | gold=2191 opp_gold~=3265 | warriors=10 opp=42 =====
+T194  MOVE A49 26->7  [ATTACK]  총공세 돌격 (집결완료 1명)
+T194  TRAIN 0 (공세중; want=0 extraToTrain=6)
+===== TURN 195 | gold=2221 opp_gold~=3423 | warriors=10 opp=41 =====
+T195  TRAIN 0 (평시; want=22 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 196 | gold=2263 opp_gold~=3543 | warriors=9 opp=40 =====
+T196  TRAIN 0 (평시; want=22 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 197 | gold=2307 opp_gold~=3703 | warriors=8 opp=40 =====
+T197  TRAIN 0 (평시; want=22 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 198 | gold=2355 opp_gold~=230 | warriors=6 opp=39 =====
+T198  TRAIN 0 (평시; want=21 nNormal=2 nEmergency=2 HQ열세->0)
+===== TURN 199 | gold=2394 opp_gold~=237 | warriors=3 opp=39 =====
+T199  TRAIN 0 (평시; want=23 nNormal=2 nEmergency=2 HQ열세->0)

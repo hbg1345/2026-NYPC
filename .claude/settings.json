@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -)",
+      "Bash(where python *)",
+      "Bash(python -)",
+      "Bash(awk '/TURN 5[8-9] |TURN 6[0-6] /{p=1} /TURN 67 /{p=0} p' debug_A.txt)",
+      "Bash(python judge.py tournament pool/70784.cpp pool/70833.cpp --games 2 --workers 2)",
+      "Bash(conda run *)",
+      "Bash(diff pool/70833.cpp pool/79541.cpp > /tmp/diff.txt 2>&1; wc -l /tmp/diff.txt; echo \"---STAT---\"; git diff --no-index --stat pool/70833.cpp pool/79541.cpp 2>/dev/null | tail -3)",
+      "Read(//tmp/**)",
+      "Bash(echo \"=== 라인수 ===\"; wc -l pool/79541.cpp pool/83304.cpp; echo \"=== diffstat \\(79541 -> 83304\\) ===\"; diff pool/79541.cpp pool/83304.cpp | grep -E \"^[0-9]\"; echo \"=== 변경 라인 수 ===\"; diff pool/79541.cpp pool/83304.cpp | grep -cE \"^[<>]\"; echo \"=== 신규/삭제 심볼 ===\"; grep -nE \"^static |^struct \" pool/79541.cpp | grep -oE \"\\(static [a-zA-Z_:<>]+ [a-zA-Z_]+|struct [A-Za-z]+\\)\" | sed 's/.* //' | sort -u > /tmp/a.txt; grep -nE \"^static |^struct \" pool/83304.cpp | grep -oE \"\\(static [a-zA-Z_:<>]+ [a-zA-Z_]+|struct [A-Za-z]+\\)\" | sed 's/.* //' | sort -u > /tmp/b.txt; echo \"[신규]\"; comm -13 /tmp/a.txt /tmp/b.txt; echo \"[삭제]\"; comm -23 /tmp/a.txt /tmp/b.txt)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

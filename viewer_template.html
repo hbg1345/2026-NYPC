@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전장 리플레이 — NYPC 2026</title>
+<style>
+  :root {
+    --chrome: #1b1f26;
+    --chrome-2: #23282f;
+    --ink: #eef1f4;
+    --muted: #9aa4b1;
+    --red: #d4483a;
+    --red-soft: rgba(212,72,58,.32);
+    --blue: #2f7fd6;
+    --blue-soft: rgba(47,127,214,.32);
+    --gold: #e0b34a;
+    --good: #48b57a;
+    --land: #ece3d1;
+    --land-line: #40372a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+    background: var(--chrome); color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  button { font-family: inherit; }
+  .hud-font {
+    font-family: Bahnschrift, "Arial Narrow", sans-serif;
+    letter-spacing: 0.06em;
+  }
+  .num {
+    font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .app {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ---- Team header ---- */
+  .teambar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .team.a { background: linear-gradient(90deg, var(--red), #b83226); justify-content: flex-start; }
+  .team.b { background: linear-gradient(90deg, #2566ae, var(--blue)); justify-content: flex-end; flex-direction: row-reverse; }
+  .team .tag {
+    font-family: Bahnschrift, "Arial Narrow", sans-serif;
+    background: rgba(0,0,0,.28);
+    border-radius: 4px;
+    padding: 2px 9px;
+    font-size: 13px;
+  }
+
+  /* ---- Stats row ---- */
+  .statsbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: var(--chrome-2);
+    padding: 10px 24px;
+    border-bottom: 1px solid #000;
+  }
+  .stats-group { display: flex; gap: 26px; }
+  .stats-group.right { justify-content: flex-end; }
+  .stat {
+    text-align: center;
+    min-width: 68px;
+  }
+  .stat .hud-font {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .stat .val { font-size: 18px; font-weight: 700; }
+  .stat .delta { font-size: 11px; color: var(--good); margin-left: 4px; }
+  .stat.gold .val { color: var(--gold); }
+  .stat.bases.a .val { color: var(--red); }
+  .stat.bases.b .val { color: var(--blue); }
+
+  .turncenter { text-align: center; padding: 0 24px; }
+  .turncenter .hud-font { font-size: 10px; color: var(--muted); text-transform: uppercase; }
+  .turncenter .val { font-size: 26px; font-weight: 800; font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace; }
+  .turncenter .val .max { color: var(--muted); font-size: 15px; font-weight: 500; }
+
+  /* ---- Result banner ---- */
+  .resultbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #000;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 7px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .resultbar.hidden-mode .resultbar-text { display: none; }
+  .resultbar .chev { transition: transform .15s; color: var(--muted); }
+  .resultbar.collapsed .chev { transform: rotate(-90deg); }
+  .resultbar.idle { color: var(--muted); font-weight: 500; }
+
+  /* ---- Map ---- */
+  .mapwrap {
+    position: relative;
+    background: #55565a;
+    overflow: hidden;
+    cursor: grab;
+  }
+  .mapwrap.dragging { cursor: grabbing; }
+  .mapwrap svg { width: 100%; height: 100%; display: block; }
+
+  .cell { stroke: var(--land-line); stroke-width: 1.1; fill: var(--land); }
+  .cell.side-A { fill: var(--red-soft); }
+  .cell.side-B { fill: var(--blue-soft); }
+  .cell.strong-empty { fill: rgba(224,179,74,.4); stroke: var(--gold); stroke-width: 1.6; stroke-dasharray: 4 3; }
+
+  @keyframes flashcell {
+    0%, 100% { stroke-opacity: .35; }
+    50% { stroke-opacity: 1; }
+  }
+  .cell.fought { stroke: var(--gold); stroke-width: 2.6; animation: flashcell 0.8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .cell.fought { animation: none; stroke-opacity: 1; } }
+
+  .bld-icon rect.plate {
+    stroke-width: 1.4;
+  }
+  .bld-icon.side-A rect.plate { fill: var(--red); stroke: #7a2119; }
+  .bld-icon.side-B rect.plate { fill: var(--blue); stroke: #1a4a80; }
+  .bld-icon .lvl { fill: #fff; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+  .bld-icon .hpbar-bg { fill: rgba(0,0,0,.4); }
+  .bld-icon .hpbar-fg { fill: var(--good); }
+
+  .unit-badge .plate { fill: #fff; stroke-width: 1.2; }
+  .unit-badge.side-A .plate { stroke: var(--red); }
+  .unit-badge.side-B .plate { stroke: var(--blue); }
+  .unit-badge.side-A text { fill: var(--red); }
+  .unit-badge.side-B text { fill: var(--blue); }
+  .unit-badge text { font-weight: 800; text-anchor: middle; dominant-baseline: central; font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace; }
+
+  .region-label { font-family: "Cascadia Mono", monospace; font-size: 8px; fill: #8a8168; text-anchor: middle; pointer-events: none; }
+
+  /* ---- zoom controls ---- */
+  .zoombar {
+    position: absolute;
+    right: 16px; bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20,22,26,.72);
+    border-radius: 8px;
+    padding: 8px 12px;
+    backdrop-filter: blur(3px);
+  }
+  .zoombar button {
+    width: 26px; height: 26px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #2a2f37;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+  }
+  .zoombar button:hover { border-color: var(--gold); color: var(--gold); }
+  .zoombar input[type=range] { width: 110px; accent-color: var(--gold); }
+  .zoombar .zoomlabel { font-size: 11px; color: var(--muted); min-width: 34px; text-align: right; font-family: "Cascadia Mono", monospace; }
+
+  .legend {
+    position: absolute;
+    left: 16px; bottom: 16px;
+    background: rgba(20,22,26,.72);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    backdrop-filter: blur(3px);
+  }
+  .legend .row { display: flex; align-items: center; gap: 8px; }
+  .legend .swatch { width: 13px; height: 13px; border-radius: 3px; flex: none; border: 1.4px solid; }
+
+  /* ---- Transport ---- */
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 20px;
+    background: var(--chrome-2);
+    border-top: 1px solid #000;
+  }
+  .transport .grp { display: flex; gap: 4px; }
+  .transport button.tbtn {
+    background: #2a2f37;
+    color: var(--ink);
+    border: 1px solid #3a4048;
+    border-radius: 6px;
+    width: 36px; height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .transport button.tbtn:hover { border-color: var(--gold); color: var(--gold); }
+  .transport button.tbtn.play { width: 44px; }
+  .transport button.tbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  .speedgrp { display: flex; gap: 3px; }
+  .speedgrp button {
+    background: #2a2f37;
+    color: var(--muted);
+    border: 1px solid #3a4048;
+    border-radius: 5px;
+    padding: 6px 9px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: "Cascadia Mono", monospace;
+  }
+  .speedgrp button.active { background: var(--gold); color: #1b1f26; border-color: var(--gold); font-weight: 700; }
+
+  .scrubber { flex: 1; position: relative; height: 32px; display: flex; align-items: center; }
+  .scrubber input[type=range] {
+    width: 100%;
+    accent-color: var(--gold);
+    position: relative;
+    z-index: 2;
+  }
+  .ticks { position: absolute; left: 0; right: 0; top: 50%; height: 6px; transform: translateY(-50%); pointer-events: none; }
+  .ticks .tick { position: absolute; top: 0; width: 2px; height: 6px; background: var(--red); opacity: .85; }
+
+  .pos { font-family: "Cascadia Mono", monospace; font-size: 12px; color: var(--muted); min-width: 70px; text-align: right; }
+  .seedtag { color: var(--muted); font-size: 11px; font-family: "Cascadia Mono", monospace; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="teambar">
+    <div class="team a"><span class="tag hud-font">A</span><span id="nameA">Agent A</span></div>
+    <div class="team b"><span class="tag hud-font">B</span><span id="nameB">Agent B</span></div>
+  </div>
+
+  <div class="statsbar">
+    <div class="stats-group left">
+      <div class="stat"><div class="hud-font">Warriors</div><div class="val num" id="warA">3</div></div>
+      <div class="stat gold"><div class="hud-font">Gold</div><div class="val num" id="goldA">500<span class="delta num" id="dGoldA"></span></div></div>
+      <div class="stat bases a"><div class="hud-font">Bases</div><div class="val num" id="basesA">0</div></div>
+    </div>
+    <div class="turncenter">
+      <div class="hud-font">Turn</div>
+      <div class="val"><span id="dayNum">0</span><span class="max"> / <span id="dayMax">200</span></span></div>
+    </div>
+    <div class="stats-group right">
+      <div class="stat bases b"><div class="hud-font">Bases</div><div class="val num" id="basesB">0</div></div>
+      <div class="stat gold"><div class="hud-font">Gold</div><div class="val num" id="goldB">500<span class="delta num" id="dGoldB"></span></div></div>
+      <div class="stat"><div class="hud-font">Warriors</div><div class="val num" id="warB">3</div></div>
+    </div>
+  </div>
+
+  <div class="resultbar idle" id="resultBar">
+    <span class="resultbar-text" id="resultText">진행 중</span>
+    <span class="chev">▾</span>
+  </div>
+
+  <main class="mapwrap" id="mapwrap">
+    <svg id="map" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="legend">
+      <div class="row"><span class="swatch" style="background:var(--red-soft);border-color:var(--red)"></span>RED(A) 영토</div>
+      <div class="row"><span class="swatch" style="background:var(--blue-soft);border-color:var(--blue)"></span>BLUE(B) 영토</div>
+      <div class="row"><span class="swatch" style="background:rgba(224,179,74,.4);border-color:var(--gold);border-style:dashed"></span>비어있는 거점(건설 가능)</div>
+      <div class="row"><span class="swatch" style="background:transparent;border-color:var(--gold)"></span>이번 턴 전투</div>
+    </div>
+    <div class="zoombar">
+      <button id="zoomOut" title="축소">−</button>
+      <input type="range" id="zoomRange" min="50" max="400" value="100" step="5">
+      <span class="zoomlabel"><span id="zoomLabel">100</span>%</span>
+      <button id="zoomIn" title="확대">+</button>
+      <button id="zoomFit" title="화면에 맞추기">⤢</button>
+    </div>
+  </main>
+
+  <footer class="transport">
+    <div class="grp">
+      <button class="tbtn" id="btnFirst" title="처음으로">⏮</button>
+      <button class="tbtn" id="btnPrev" title="이전 턴">◀</button>
+      <button class="tbtn play" id="btnPlay" title="재생/일시정지">▶</button>
+      <button class="tbtn" id="btnNext" title="다음 턴">▶</button>
+      <button class="tbtn" id="btnLast" title="마지막으로">⏭</button>
+    </div>
+    <div class="speedgrp" id="speedGrp">
+      <button data-s="4">x0.25</button>
+      <button data-s="2">x0.5</button>
+      <button data-s="1" class="active">x1</button>
+      <button data-s="0.5">x2</button>
+      <button data-s="0.25">x4</button>
+      <button data-s="0.12">x8</button>
+      <button data-s="0.06">x16</button>
+    </div>
+    <div class="scrubber">
+      <div class="ticks" id="ticks"></div>
+      <input type="range" id="scrub" min="0" max="0" value="0" step="1">
+    </div>
+    <span class="pos"><span id="scrubPos">0</span> / <span id="scrubMax">0</span></span>
+    <span class="seedtag" id="seedtag"></span>
+  </footer>
+</div>
+
+<script>
+const DATA = __REPLAY_JSON__;
+
+const M = DATA.map;
+const N = M.N;
+const frames = DATA.frames;
+const strongSet = new Set(M.strongholds);
+
+document.getElementById("nameA").textContent = DATA.result.nameA || "Agent A";
+document.getElementById("nameB").textContent = DATA.result.nameB || "Agent B";
+document.getElementById("seedtag").textContent = "seed=" + DATA.result.seed;
+
+// ---- project region coordinates & polygons into the 1000x620 viewBox ----
+const VBW = 1000, VBH = 620, PAD = 30;
+const xs = M.x, ys = M.y;
+const minX = Math.min(...xs), maxX = Math.max(...xs);
+const minY = Math.min(...ys), maxY = Math.max(...ys);
+const spanX = Math.max(1, maxX - minX), spanY = Math.max(1, maxY - minY);
+const scale = Math.min((VBW - 2 * PAD) / spanX, (VBH - 2 * PAD) / spanY);
+const offX = (VBW - spanX * scale) / 2;
+const offY = (VBH - spanY * scale) / 2;
+function projX(x) { return offX + (x - minX) * scale; }
+function projY(y) { return VBH - (offY + (y - minY) * scale); } // flip y for conventional up orientation
+function px(i) { return projX(xs[i]); }
+function py(i) { return projY(ys[i]); }
+
+const svg = document.getElementById("map");
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+const worldLayer = el("g", {id: "world"});
+svg.appendChild(worldLayer);
+const cellLayer = el("g", {class: "cells"});
+const labelLayer = el("g", {class: "labels"});
+const bldLayer = el("g", {class: "buildings"});
+const unitLayer = el("g", {class: "units"});
+worldLayer.appendChild(cellLayer);
+worldLayer.appendChild(labelLayer);
+worldLayer.appendChild(bldLayer);
+worldLayer.appendChild(unitLayer);
+
+// ---- draw territory polygons (actual Voronoi cell shapes) ----
+const cellPolys = [];
+for (let i = 0; i < N; i++) {
+  const pts = M.polys[i].map(([x, y]) => projX(x) + "," + projY(y)).join(" ");
+  const isStrong = strongSet.has(i);
+  const poly = el("polygon", {class: "cell" + (isStrong && i !== 0 && i !== N - 1 ? " strong-empty" : ""), points: pts});
+  cellLayer.appendChild(poly);
+  cellPolys.push(poly);
+  if (i === 0 || i === N - 1) {
+    const t = el("text", {class: "region-label", x: px(i), y: py(i) - 24});
+    t.textContent = i === 0 ? "HQ-A" : "HQ-B";
+    labelLayer.appendChild(t);
+  }
+}
+
+// ---- building icon (rounded plate + level number + hp bar) ----
+function makeBuildingIcon(i) {
+  const g = el("g", {class: "bld-icon", "data-r": i, style: "display:none"});
+  const cx = px(i), cy = py(i);
+  const w = 22, h = 18;
+  const rect = el("rect", {class: "plate", x: cx - w / 2, y: cy - h / 2, width: w, height: h, rx: 3});
+  const lvl = el("text", {class: "lvl", x: cx, y: cy - 2, "font-size": 11});
+  const hpbg = el("rect", {class: "hpbar-bg", x: cx - w / 2, y: cy + h / 2 - 3, width: w, height: 3, rx: 1.5});
+  const hpfg = el("rect", {class: "hpbar-fg", x: cx - w / 2, y: cy + h / 2 - 3, width: w, height: 3, rx: 1.5});
+  g.appendChild(rect); g.appendChild(hpbg); g.appendChild(hpfg); g.appendChild(lvl);
+  g._w = w; g._cx = cx; g._hpfg = hpfg; g._lvl = lvl; g._rect = rect;
+  bldLayer.appendChild(g);
+  return g;
+}
+const bldIcons = [];
+for (let i = 0; i < N; i++) bldIcons.push(makeBuildingIcon(i));
+
+// ---- unit badge (small circular plate + count text), offset below the node ----
+function makeUnitBadge(i, dx) {
+  const cx = px(i) + dx, cy = py(i) + 22;
+  const g = el("g", {class: "unit-badge", style: "display:none"});
+  const plate = el("circle", {class: "plate", cx: cx, cy: cy, r: 9});
+  const txt = el("text", {x: cx, y: cy + 1, "font-size": 10});
+  g.appendChild(plate); g.appendChild(txt);
+  g._txt = txt;
+  unitLayer.appendChild(g);
+  return g;
+}
+const unitBadgeA = [], unitBadgeB = [];
+for (let i = 0; i < N; i++) {
+  unitBadgeA.push(makeUnitBadge(i, -12));
+  unitBadgeB.push(makeUnitBadge(i, 12));
+}
+
+// ---- HUD elements ----
+const dayNum = document.getElementById("dayNum");
+const dayMax = document.getElementById("dayMax");
+const goldA = document.getElementById("goldA"), goldB = document.getElementById("goldB");
+const dGoldA = document.getElementById("dGoldA"), dGoldB = document.getElementById("dGoldB");
+const warA = document.getElementById("warA"), warB = document.getElementById("warB");
+const basesA = document.getElementById("basesA"), basesB = document.getElementById("basesB");
+const resultBar = document.getElementById("resultBar");
+const resultText = document.getElementById("resultText");
+const scrub = document.getElementById("scrub");
+const scrubPos = document.getElementById("scrubPos");
+const scrubMax = document.getElementById("scrubMax");
+
+dayMax.textContent = frames.length ? frames[frames.length - 1].t : 0;
+scrub.max = Math.max(0, frames.length - 1);
+scrubMax.textContent = scrub.max;
+
+// tick marks on the timeline for days where any combat happened
+const ticksEl = document.getElementById("ticks");
+function buildTicks() {
+  ticksEl.innerHTML = "";
+  const max = Math.max(1, frames.length - 1);
+  frames.forEach((f, i) => {
+    const fought = f.sieged.length > 0 || Object.values(f.warriors).some(w => w.A > 0 && w.B > 0);
+    if (!fought) return;
+    const d = document.createElement("div");
+    d.className = "tick";
+    d.style.left = (100 * i / max) + "%";
+    ticksEl.appendChild(d);
+  });
+}
+buildTicks();
+
+const HQ_MAX_HP = {1: 10, 2: 15, 3: 20, 4: 25, 5: 30};
+const BASE_MAX_HP = {1: 6, 2: 12, 3: 18};
+
+let idx = 0;
+let playing = false;
+let timer = null;
+let prevGold = {A: 500, B: 500};
+
+function renderFrame(i) {
+  const f = frames[i];
+  dayNum.textContent = f.t;
+
+  const gA = f.gold.A, gB = f.gold.B;
+  const deltaA = i > 0 ? gA - frames[i - 1].gold.A : 0;
+  const deltaB = i > 0 ? gB - frames[i - 1].gold.B : 0;
+  goldA.firstChild.textContent = gA;
+  goldB.firstChild.textContent = gB;
+  dGoldA.textContent = deltaA !== 0 ? (deltaA > 0 ? " +" + deltaA : " " + deltaA) : "";
+  dGoldB.textContent = deltaB !== 0 ? (deltaB > 0 ? " +" + deltaB : " " + deltaB) : "";
+  dGoldA.style.color = deltaA < 0 ? "var(--red)" : "var(--good)";
+  dGoldB.style.color = deltaB < 0 ? "var(--red)" : "var(--good)";
+
+  let wA = 0, wB = 0;
+  for (const r in f.warriors) { wA += f.warriors[r].A; wB += f.warriors[r].B; }
+  warA.textContent = wA; warB.textContent = wB;
+
+  let bA = 0, bB = 0;
+  for (const b of f.buildings) if (b.type === "BASE") { if (b.side === "A") bA++; else bB++; }
+  basesA.textContent = bA; basesB.textContent = bB;
+
+  // reset cells/icons
+  for (let r = 0; r < N; r++) {
+    const base = "cell" + (strongSet.has(r) && r !== 0 && r !== N - 1 ? " strong-empty" : "");
+    cellPolys[r].setAttribute("class", base);
+    bldIcons[r].style.display = "none";
+    unitBadgeA[r].style.display = "none";
+    unitBadgeB[r].style.display = "none";
+  }
+
+  for (const b of f.buildings) {
+    const cls = "cell side-" + b.side;
+    cellPolys[b.r].setAttribute("class", cls);
+    const g = bldIcons[b.r];
+    g.style.display = "";
+    g.setAttribute("class", "bld-icon side-" + b.side);
+    g._lvl.textContent = b.type === "HQ" ? "H" + b.level : b.level;
+    const maxhp = b.type === "HQ" ? (HQ_MAX_HP[b.level] || 30) : (BASE_MAX_HP[b.level] || 18);
+    const frac = Math.max(0, Math.min(1, b.hp / maxhp));
+    g._hpfg.setAttribute("width", g._w * frac);
+  }
+
+  for (const rStr in f.warriors) {
+    const r = +rStr;
+    const w = f.warriors[rStr];
+    if (w.A > 0) {
+      unitBadgeA[r].style.display = "";
+      unitBadgeA[r].setAttribute("class", "unit-badge side-A");
+      unitBadgeA[r]._txt.textContent = w.A;
+    }
+    if (w.B > 0) {
+      unitBadgeB[r].style.display = "";
+      unitBadgeB[r].setAttribute("class", "unit-badge side-B");
+      unitBadgeB[r]._txt.textContent = w.B;
+    }
+  }
+
+  const fought = new Set();
+  for (const d of f.sieged) fought.add(d.r);
+  for (const rStr in f.warriors) {
+    const w = f.warriors[rStr];
+    if (w.A > 0 && w.B > 0) fought.add(+rStr);
+  }
+  for (const r of fought) {
+    const cur = cellPolys[r].getAttribute("class");
+    cellPolys[r].setAttribute("class", cur + " fought");
+  }
+
+  scrub.value = i;
+  scrubPos.textContent = i;
+
+  if (i === frames.length - 1 && DATA.result) {
+    const res = DATA.result;
+    resultBar.className = "resultbar";
+    resultText.textContent = res.winner
+      ? ((res.winner === "A" ? (DATA.result.nameA || "A") : (DATA.result.nameB || "B")) + " 승리 · " + res.reason)
+      : "무승부 · " + res.reason;
+  } else {
+    resultBar.className = "resultbar idle";
+    resultText.textContent = "진행 중";
+  }
+}
+
+function goto(i) {
+  idx = Math.max(0, Math.min(frames.length - 1, i));
+  renderFrame(idx);
+}
+
+function stop() {
+  playing = false;
+  document.getElementById("btnPlay").textContent = "▶";
+  if (timer) { clearInterval(timer); timer = null; }
+}
+let curSpeed = 1;
+function play() {
+  if (idx >= frames.length - 1) idx = 0;
+  playing = true;
+  document.getElementById("btnPlay").textContent = "❚❚";
+  if (timer) clearInterval(timer);
+  timer = setInterval(() => {
+    if (idx >= frames.length - 1) { stop(); return; }
+    goto(idx + 1);
+  }, curSpeed * 1000);
+}
+
+document.getElementById("btnPlay").addEventListener("click", () => { playing ? stop() : play(); });
+document.getElementById("btnNext").addEventListener("click", () => { stop(); goto(idx + 1); });
+document.getElementById("btnPrev").addEventListener("click", () => { stop(); goto(idx - 1); });
+document.getElementById("btnFirst").addEventListener("click", () => { stop(); goto(0); });
+document.getElementById("btnLast").addEventListener("click", () => { stop(); goto(frames.length - 1); });
+document.querySelectorAll("#speedGrp button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#speedGrp button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    curSpeed = +btn.dataset.s;
+    if (playing) play();
+  });
+});
+scrub.addEventListener("input", () => { stop(); goto(+scrub.value); });
+resultBar.addEventListener("click", () => resultBar.classList.toggle("collapsed"));
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowRight") { stop(); goto(idx + 1); }
+  else if (e.key === "ArrowLeft") { stop(); goto(idx - 1); }
+  else if (e.key === " ") { e.preventDefault(); playing ? stop() : play(); }
+});
+
+// ---- zoom / pan ----
+const mapwrap = document.getElementById("mapwrap");
+const zoomRange = document.getElementById("zoomRange");
+const zoomLabel = document.getElementById("zoomLabel");
+let zoom = 1, panX = 0, panY = 0;
+function applyTransform() {
+  worldLayer.setAttribute("transform", `translate(${panX},${panY}) scale(${zoom})`);
+  zoomRange.value = Math.round(zoom * 100);
+  zoomLabel.textContent = Math.round(zoom * 100);
+}
+function setZoom(z, cx, cy) {
+  z = Math.max(0.5, Math.min(4, z));
+  if (cx === undefined) { cx = VBW / 2; cy = VBH / 2; }
+  const wx = (cx - panX) / zoom, wy = (cy - panY) / zoom;
+  zoom = z;
+  panX = cx - wx * zoom;
+  panY = cy - wy * zoom;
+  applyTransform();
+}
+document.getElementById("zoomIn").addEventListener("click", () => setZoom(zoom * 1.2));
+document.getElementById("zoomOut").addEventListener("click", () => setZoom(zoom / 1.2));
+document.getElementById("zoomFit").addEventListener("click", () => { zoom = 1; panX = 0; panY = 0; applyTransform(); });
+zoomRange.addEventListener("input", () => setZoom(+zoomRange.value / 100));
+
+function svgPoint(evt) {
+  const rect = svg.getBoundingClientRect();
+  const sx = (evt.clientX - rect.left) / rect.width * VBW;
+  const sy = (evt.clientY - rect.top) / rect.height * VBH;
+  return [sx, sy];
+}
+mapwrap.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  const [sx, sy] = svgPoint(e);
+  setZoom(zoom * (e.deltaY < 0 ? 1.1 : 1 / 1.1), sx, sy);
+}, {passive: false});
+
+let dragging = false, lastX = 0, lastY = 0;
+mapwrap.addEventListener("mousedown", (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; mapwrap.classList.add("dragging"); });
+window.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+  panX += (e.clientX - lastX);
+  panY += (e.clientY - lastY);
+  lastX = e.clientX; lastY = e.clientY;
+  applyTransform();
+});
+window.addEventListener("mouseup", () => { dragging = false; mapwrap.classList.remove("dragging"); });
+
+applyTransform();
+renderFrame(0);
+</script>
+</body>
+</html>
