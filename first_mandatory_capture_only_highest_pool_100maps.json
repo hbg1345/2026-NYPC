@@ -1,0 +1,578 @@
+{
+  "definition": {
+    "snapshot": "state at the start of the first RECLAIM_MANDATORY_TRIGGER turn",
+    "counterfactual": "both sides use the same deterministic capture-only policy; no attacks, defensive moves, combat, upgrades, or repairs",
+    "success": "the first mandatory wave for the first triggered target is followed by RECLAIM_MANDATORY_RESOLVED before WAVE_LOST",
+    "failure": "the first mandatory operation for the first triggered target is followed by WAVE_LOST, or its lock is released after launch"
+  },
+  "all_games": {
+    "games": 1900,
+    "outcomes": {
+      "W": 1462,
+      "D": 395,
+      "L": 43
+    },
+    "score_rate": 0.873421052631579
+  },
+  "triggered_games": {
+    "games": 1556,
+    "outcomes": {
+      "W": 1153,
+      "D": 360,
+      "L": 43
+    },
+    "score_rate": 0.8566838046272494
+  },
+  "capture_only_relation_counts": {
+    "BEHIND": 251,
+    "TIED": 1058,
+    "AHEAD": 247
+  },
+  "capture_only_behind_rate_among_triggered": 0.16131105398457585,
+  "first_attack_result_counts": {
+    "FAILURE_RELEASED": 106,
+    "NO_LAUNCH_RELEASED": 139,
+    "NO_LAUNCH_RESOLVED": 432,
+    "SUCCESS": 876,
+    "UNRESOLVED_AFTER_LAUNCH": 3
+  },
+  "first_attack_decided": 982,
+  "first_attack_successes": 876,
+  "first_attack_failures": 106,
+  "first_attack_success_rate": 0.8920570264765784,
+  "capture_relation_by_first_attack_result": {
+    "BEHIND": {
+      "FAILURE_RELEASED": 6,
+      "NO_LAUNCH_RELEASED": 21,
+      "NO_LAUNCH_RESOLVED": 6,
+      "SUCCESS": 216,
+      "UNRESOLVED_AFTER_LAUNCH": 2
+    },
+    "TIED": {
+      "FAILURE_RELEASED": 84,
+      "NO_LAUNCH_RELEASED": 110,
+      "NO_LAUNCH_RESOLVED": 392,
+      "SUCCESS": 471,
+      "UNRESOLVED_AFTER_LAUNCH": 1
+    },
+    "AHEAD": {
+      "FAILURE_RELEASED": 16,
+      "NO_LAUNCH_RELEASED": 8,
+      "NO_LAUNCH_RESOLVED": 34,
+      "SUCCESS": 189
+    }
+  },
+  "match_outcome_by_capture_relation": {
+    "BEHIND": {
+      "games": 251,
+      "outcomes": {
+        "W": 187,
+        "D": 56,
+        "L": 8
+      },
+      "score_rate": 0.8565737051792829
+    },
+    "TIED": {
+      "games": 1058,
+      "outcomes": {
+        "W": 751,
+        "D": 276,
+        "L": 31
+      },
+      "score_rate": 0.8402646502835539
+    },
+    "AHEAD": {
+      "games": 247,
+      "outcomes": {
+        "W": 215,
+        "D": 28,
+        "L": 4
+      },
+      "score_rate": 0.9271255060728745
+    }
+  },
+  "match_outcome_by_first_attack_result": {
+    "FAILURE_RELEASED": {
+      "games": 106,
+      "outcomes": {
+        "W": 73,
+        "D": 31,
+        "L": 2
+      },
+      "score_rate": 0.8349056603773585
+    },
+    "NO_LAUNCH_RELEASED": {
+      "games": 139,
+      "outcomes": {
+        "W": 114,
+        "D": 21,
+        "L": 4
+      },
+      "score_rate": 0.89568345323741
+    },
+    "NO_LAUNCH_RESOLVED": {
+      "games": 432,
+      "outcomes": {
+        "W": 250,
+        "D": 163,
+        "L": 19
+      },
+      "score_rate": 0.7673611111111112
+    },
+    "SUCCESS": {
+      "games": 876,
+      "outcomes": {
+        "W": 716,
+        "D": 145,
+        "L": 15
+      },
+      "score_rate": 0.9001141552511416
+    },
+    "UNRESOLVED_AFTER_LAUNCH": {
+      "games": 3,
+      "outcomes": {
+        "W": 0,
+        "D": 0,
+        "L": 3
+      },
+      "score_rate": 0.0
+    }
+  },
+  "per_opponent": {
+    "65205": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 100,
+          "D": 0,
+          "L": 0
+        },
+        "score_rate": 1.0
+      },
+      "triggered_games": 53,
+      "capture_only_relations": {
+        "AHEAD": 18,
+        "BEHIND": 16,
+        "TIED": 19
+      },
+      "first_attack_results": {
+        "SUCCESS": 26,
+        "NO_LAUNCH_RELEASED": 7,
+        "NO_LAUNCH_RESOLVED": 18,
+        "FAILURE_RELEASED": 2
+      }
+    },
+    "65257": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 100,
+          "D": 0,
+          "L": 0
+        },
+        "score_rate": 1.0
+      },
+      "triggered_games": 53,
+      "capture_only_relations": {
+        "AHEAD": 18,
+        "BEHIND": 16,
+        "TIED": 19
+      },
+      "first_attack_results": {
+        "SUCCESS": 26,
+        "NO_LAUNCH_RELEASED": 7,
+        "NO_LAUNCH_RESOLVED": 18,
+        "FAILURE_RELEASED": 2
+      }
+    },
+    "70784": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 95,
+          "D": 5,
+          "L": 0
+        },
+        "score_rate": 0.975
+      },
+      "triggered_games": 76,
+      "capture_only_relations": {
+        "AHEAD": 33,
+        "BEHIND": 23,
+        "TIED": 20
+      },
+      "first_attack_results": {
+        "SUCCESS": 51,
+        "NO_LAUNCH_RESOLVED": 17,
+        "NO_LAUNCH_RELEASED": 7,
+        "FAILURE_RELEASED": 1
+      }
+    },
+    "70833": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 95,
+          "D": 5,
+          "L": 0
+        },
+        "score_rate": 0.975
+      },
+      "triggered_games": 76,
+      "capture_only_relations": {
+        "AHEAD": 33,
+        "BEHIND": 23,
+        "TIED": 20
+      },
+      "first_attack_results": {
+        "SUCCESS": 51,
+        "NO_LAUNCH_RESOLVED": 17,
+        "NO_LAUNCH_RELEASED": 7,
+        "FAILURE_RELEASED": 1
+      }
+    },
+    "79541": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 81,
+          "D": 15,
+          "L": 4
+        },
+        "score_rate": 0.885
+      },
+      "triggered_games": 55,
+      "capture_only_relations": {
+        "TIED": 21,
+        "AHEAD": 24,
+        "BEHIND": 10
+      },
+      "first_attack_results": {
+        "SUCCESS": 41,
+        "NO_LAUNCH_RESOLVED": 12,
+        "FAILURE_RELEASED": 1,
+        "UNRESOLVED_AFTER_LAUNCH": 1
+      }
+    },
+    "83284": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 74,
+          "D": 24,
+          "L": 2
+        },
+        "score_rate": 0.86
+      },
+      "triggered_games": 40,
+      "capture_only_relations": {
+        "AHEAD": 19,
+        "TIED": 15,
+        "BEHIND": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 30,
+        "NO_LAUNCH_RESOLVED": 9,
+        "UNRESOLVED_AFTER_LAUNCH": 1
+      }
+    },
+    "83304": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 76,
+          "D": 22,
+          "L": 2
+        },
+        "score_rate": 0.87
+      },
+      "triggered_games": 37,
+      "capture_only_relations": {
+        "AHEAD": 17,
+        "TIED": 14,
+        "BEHIND": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 28,
+        "NO_LAUNCH_RESOLVED": 8,
+        "UNRESOLVED_AFTER_LAUNCH": 1
+      }
+    },
+    "84206": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 73,
+          "D": 25,
+          "L": 2
+        },
+        "score_rate": 0.855
+      },
+      "triggered_games": 93,
+      "capture_only_relations": {
+        "TIED": 72,
+        "BEHIND": 13,
+        "AHEAD": 8
+      },
+      "first_attack_results": {
+        "SUCCESS": 36,
+        "NO_LAUNCH_RELEASED": 3,
+        "NO_LAUNCH_RESOLVED": 44,
+        "FAILURE_RELEASED": 10
+      }
+    },
+    "87838": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 68,
+          "D": 26,
+          "L": 6
+        },
+        "score_rate": 0.81
+      },
+      "triggered_games": 89,
+      "capture_only_relations": {
+        "TIED": 75,
+        "BEHIND": 6,
+        "AHEAD": 8
+      },
+      "first_attack_results": {
+        "SUCCESS": 35,
+        "FAILURE_RELEASED": 4,
+        "NO_LAUNCH_RESOLVED": 39,
+        "NO_LAUNCH_RELEASED": 11
+      }
+    },
+    "91531": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 72,
+          "D": 23,
+          "L": 5
+        },
+        "score_rate": 0.835
+      },
+      "triggered_games": 93,
+      "capture_only_relations": {
+        "TIED": 76,
+        "BEHIND": 6,
+        "AHEAD": 11
+      },
+      "first_attack_results": {
+        "SUCCESS": 37,
+        "NO_LAUNCH_RESOLVED": 41,
+        "NO_LAUNCH_RELEASED": 12,
+        "FAILURE_RELEASED": 3
+      }
+    },
+    "93978": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 56,
+          "D": 40,
+          "L": 4
+        },
+        "score_rate": 0.76
+      },
+      "triggered_games": 91,
+      "capture_only_relations": {
+        "TIED": 75,
+        "BEHIND": 6,
+        "AHEAD": 10
+      },
+      "first_attack_results": {
+        "SUCCESS": 36,
+        "NO_LAUNCH_RESOLVED": 38,
+        "NO_LAUNCH_RELEASED": 13,
+        "FAILURE_RELEASED": 4
+      }
+    },
+    "96816": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 68,
+          "D": 29,
+          "L": 3
+        },
+        "score_rate": 0.825
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 61,
+        "FAILURE_RELEASED": 3,
+        "NO_LAUNCH_RESOLVED": 24,
+        "NO_LAUNCH_RELEASED": 12
+      }
+    },
+    "97302": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 69,
+          "D": 29,
+          "L": 2
+        },
+        "score_rate": 0.835
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 61,
+        "FAILURE_RELEASED": 8,
+        "NO_LAUNCH_RESOLVED": 22,
+        "NO_LAUNCH_RELEASED": 9
+      }
+    },
+    "107981": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 69,
+          "D": 29,
+          "L": 2
+        },
+        "score_rate": 0.835
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 61,
+        "FAILURE_RELEASED": 8,
+        "NO_LAUNCH_RESOLVED": 22,
+        "NO_LAUNCH_RELEASED": 9
+      }
+    },
+    "108830": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 77,
+          "D": 22,
+          "L": 1
+        },
+        "score_rate": 0.88
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 61,
+        "FAILURE_RELEASED": 8,
+        "NO_LAUNCH_RESOLVED": 22,
+        "NO_LAUNCH_RELEASED": 9
+      }
+    },
+    "109203": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 64,
+          "D": 30,
+          "L": 6
+        },
+        "score_rate": 0.79
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 66,
+        "FAILURE_RELEASED": 11,
+        "NO_LAUNCH_RESOLVED": 21,
+        "NO_LAUNCH_RELEASED": 2
+      }
+    },
+    "110193": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 78,
+          "D": 21,
+          "L": 1
+        },
+        "score_rate": 0.885
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 61,
+        "FAILURE_RELEASED": 8,
+        "NO_LAUNCH_RESOLVED": 22,
+        "NO_LAUNCH_RELEASED": 9
+      }
+    },
+    "110496": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 72,
+          "D": 26,
+          "L": 2
+        },
+        "score_rate": 0.85
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 54,
+        "FAILURE_RELEASED": 16,
+        "NO_LAUNCH_RELEASED": 11,
+        "NO_LAUNCH_RESOLVED": 19
+      }
+    },
+    "110584": {
+      "all": {
+        "games": 100,
+        "outcomes": {
+          "W": 75,
+          "D": 24,
+          "L": 1
+        },
+        "score_rate": 0.87
+      },
+      "triggered_games": 100,
+      "capture_only_relations": {
+        "TIED": 79,
+        "BEHIND": 15,
+        "AHEAD": 6
+      },
+      "first_attack_results": {
+        "SUCCESS": 54,
+        "FAILURE_RELEASED": 16,
+        "NO_LAUNCH_RELEASED": 11,
+        "NO_LAUNCH_RESOLVED": 19
+      }
+    }
+  }
+}

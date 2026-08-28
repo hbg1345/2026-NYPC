@@ -1,0 +1,9 @@
+*.exe
+*.o
+*.obj
+__pycache__/
+*.py[cod]
+pool/.all_model_eval_bins/
+.original_eval_bin/
+.passive_hq_eval_bins/
+.stronghold_rollout_validation_tmp/

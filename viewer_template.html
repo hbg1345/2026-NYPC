@@ -156,6 +156,25 @@
   .unit-badge text { font-weight: 800; text-anchor: middle; dominant-baseline: central; font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace; }
 
   .region-label { font-family: "Cascadia Mono", monospace; font-size: 8px; fill: #8a8168; text-anchor: middle; pointer-events: none; }
+  .stronghold-label {
+    font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    text-anchor: middle;
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: rgba(244,240,228,.96);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+  }
+  .stronghold-label .region-id {
+    fill: #493f2b;
+    font-size: 8px;
+    font-weight: 800;
+  }
+  .stronghold-label .coordinates {
+    fill: #756a52;
+    font-size: 7px;
+    font-weight: 600;
+  }
 
   /* ---- zoom controls ---- */
   .zoombar {
@@ -378,6 +397,26 @@ for (let i = 0; i < N; i++) {
   if (i === 0 || i === N - 1) {
     const t = el("text", {class: "region-label", x: px(i), y: py(i) - 24});
     t.textContent = i === 0 ? "HQ-A" : "HQ-B";
+    labelLayer.appendChild(t);
+  } else if (isStrong) {
+    // 전략 판단에 쓰는 원본 좌표를 거점 바로 위에 표시한다. 두 줄로
+    // 나눠 긴 음수 좌표도 건물/병력 배지를 덜 가리게 한다.
+    const t = el("text", {
+      class: "stronghold-label",
+      x: px(i),
+      y: py(i) - 25,
+      "aria-label": `R${i} coordinates ${xs[i]}, ${ys[i]}`
+    });
+    const regionId = el("tspan", {
+      class: "region-id", x: px(i), dy: 0
+    });
+    regionId.textContent = `R${i}`;
+    const coordinates = el("tspan", {
+      class: "coordinates", x: px(i), dy: 9
+    });
+    coordinates.textContent = `(${xs[i]}, ${ys[i]})`;
+    t.appendChild(regionId);
+    t.appendChild(coordinates);
     labelLayer.appendChild(t);
   }
 }

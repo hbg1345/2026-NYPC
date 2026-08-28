@@ -20,14 +20,34 @@ final region centers are rounded to the nearest integer, since the protocol
 never specify a rounding step for the post-relaxation centroids.
 """
 import argparse
+import queue
 import random
 import subprocess
 import sys
+import threading
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass, field
 
-from tqdm import tqdm
+try:
+    from tqdm import tqdm
+except ModuleNotFoundError:
+    class tqdm:
+        """Minimal no-op fallback for environments without the progress package."""
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def update(self, n=1):
+            pass
+
+        def set_postfix(self, **kwargs):
+            pass
 
 # ---------------------------------------------------------------------------
 # Constants (mirrors main.c++)
@@ -639,8 +659,14 @@ class Engine:
 # Agent process wrapper
 # ---------------------------------------------------------------------------
 class Agent:
+    RESPONSE_TIMEOUT_SECONDS = 10.0
+    _live = set()
+
     def __init__(self, side, exe):
         self.side = side
+        self._closed = False
+        self._stdout_queue = queue.Queue()
+        self._stderr_tail = ""
         self.proc = subprocess.Popen(
             [exe],
             stdin=subprocess.PIPE,
@@ -649,19 +675,47 @@ class Agent:
             text=True,
             bufsize=1,
         )
+        self._live.add(self)
+
+        def pump_stdout():
+            try:
+                for line in self.proc.stdout:
+                    self._stdout_queue.put(line)
+            finally:
+                self._stdout_queue.put(None)
+
+        def pump_stderr():
+            for line in self.proc.stderr:
+                self._stderr_tail = (self._stderr_tail + line)[-4000:]
+
+        threading.Thread(target=pump_stdout, daemon=True).start()
+        threading.Thread(target=pump_stderr, daemon=True).start()
 
     def send(self, line):
         self.proc.stdin.write(line if line.endswith("\n") else line + "\n")
         self.proc.stdin.flush()
 
     def readline(self):
-        line = self.proc.stdout.readline()
-        if line == "":
-            err = self.proc.stderr.read()
-            raise RuntimeError(f"agent {self.side} closed stdout unexpectedly. stderr:\n{err}")
+        try:
+            line = self._stdout_queue.get(timeout=self.RESPONSE_TIMEOUT_SECONDS)
+        except queue.Empty:
+            self.close()
+            raise TimeoutError(
+                f"agent {self.side} did not answer within "
+                f"{self.RESPONSE_TIMEOUT_SECONDS:.0f}s"
+            )
+        if line is None:
+            raise RuntimeError(
+                f"agent {self.side} closed stdout unexpectedly. "
+                f"stderr:\n{self._stderr_tail}"
+            )
         return line.rstrip("\n")
 
     def close(self):
+        if self._closed:
+            return
+        self._closed = True
+        self._live.discard(self)
         try:
             self.proc.stdin.close()
         except Exception:
@@ -670,6 +724,19 @@ class Agent:
             self.proc.terminate()
         except Exception:
             pass
+        try:
+            self.proc.wait(timeout=1)
+        except Exception:
+            try:
+                self.proc.kill()
+                self.proc.wait(timeout=1)
+            except Exception:
+                pass
+
+    @classmethod
+    def close_all(cls):
+        for agent in list(cls._live):
+            agent.close()
 
 
 class ScriptedAgent:
@@ -946,7 +1013,14 @@ def run_one_game(exe_a, exe_b, seed, record=True, map_override=None,
                     for b in eng.buildings.values()
                 ],
                 warriors=warriors_by_region,
-                moved=[dict(id=w.id, side=w.side, to=w.region) for w in moved],
+                warrior_units=[
+                    dict(id=w.id, side=w.side, r=w.region, hp=w.hp,
+                         state=w.state, target=w.target)
+                    for w in eng.warriors
+                ],
+                upgraded=[dict(side=side, r=region) for side, region in upgrades_applied],
+                moved=[dict(id=w.id, side=w.side, src=w.prev_region, to=w.region)
+                       for w in moved],
                 trained=[dict(id=w.id, side=w.side) for w in trained],
                 damaged=[dict(id=f"{s}{n}", side=s, dmg=d) for (s, n), d in damage_log.items()],
                 sieged=[dict(r=r, dmg=d) for r, d in siege_log.items()],
