@@ -1,12 +1,63 @@
-# NYPC 2026 Master Track Agent
+# NYPC 2026 Master Track Agents
 
-[日本語](#日本語) | [English](#english)
+[한국어](#한국어) | [日本語](#日本語) | [English](#english)
+
+## 한국어
+
+### 저장소 개요
+
+NYPC 2026 Master Track에 개인으로 참가해 **예선 1,603팀 중 19위(상위 약 1.2%)**로 본선에 진출했습니다.
+
+이 저장소에는 예선과 본선 에이전트가 함께 있습니다. 두 라운드는 전장 크기, 초기 자원, 최대 턴, 시야 및 인터랙션 프로토콜이 다르므로 작업 경로를 분리했습니다.
+
+| 경로 | 용도 |
+|---|---|
+| `main.c++` | 예선 최종 휴리스틱 에이전트 |
+| `judge.py` | 예선 로컬 심판, 맵 생성, 배치 평가 및 토너먼트 |
+| `GameRules.md` | 예선 규칙 정리 |
+| `pool/*.cpp` | 예선 비교 평가에 사용한 후보 전략 |
+| [`NEXT_VISION/`](NEXT_VISION/README.md) | 본선 전용 소스, 규칙, 로컬 심판 및 분석 도구 |
+| `NEXT_VISION/master_main.cpp` | 현재 본선 전략의 기준 소스 |
+| `NEXT_VISION/judge.py` | 본선 규칙과 시야 프로토콜을 반영한 로컬 심판 |
+
+### 예선과 본선
+
+| 항목 | 예선 | 본선 `NEXT VISION` |
+|---|---:|---:|
+| 전장 구역 수 | 51–109 | 181–249 |
+| 초기 금화 | 500 | 750 |
+| 최대 턴 | 200 | 400 |
+| 관측 | 전체 상태 | 아군 전사·건물에서 그래프 거리 2 이내 |
+| 기준 C++ | C++17 | C++20 |
+
+### 빠른 시작
+
+예선 에이전트 두 개를 100게임 비교합니다.
+
+```bash
+python3 judge.py main.c++ pool/110584.cpp --games 100 --workers 8 --seed 42
+```
+
+본선 기준 에이전트를 빌드하고 로컬 대전을 실행합니다.
+
+```bash
+g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
+
+python3 NEXT_VISION/judge.py \
+  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
+  --games 1 --seed 42
+```
+
+본선 폴더의 자세한 파일 설명과 리플레이 분석 방법은 [`NEXT_VISION/README.md`](NEXT_VISION/README.md)를 참고하세요. 로컬 실행 파일, 디버그 로그, 원본 리플레이와 생성된 HTML은 Git에 포함하지 않습니다.
 
 ## 日本語
 
 ### 結果
 
 NYPC 2026 Master Trackに個人で参加し、**予選1,603チーム中19位（上位約1.2%）**でFinal Roundへ進出しました。
+
+repository rootには予選用agentとlocal judgeを保存し、ルール・視野・protocolが異なるFinal Round用実装は[`NEXT_VISION/`](NEXT_VISION/README.md)に分離しています。Final Roundの基準sourceは`NEXT_VISION/master_main.cpp`、local judgeは`NEXT_VISION/judge.py`です。
 
 この競技では、2人のagentがgraph状の戦場で戦士を移動させ、拠点へbaseを建設・upgradeし、HQで兵力を訓練しながら相手HQの破壊を目指します。各turnで限られたgoldを移動、建設、訓練へ配分するため、最短経路だけでなく、将来の収入、維持費、増援、turret damage、残りturnを同時に判断する必要があります。
 
@@ -65,13 +116,15 @@ simulationは兵力の到着時点、building HP、turret/unit damage、双方�
 
 | Path | Role |
 |---|---|
-| `main.c++` | Final heuristic agent |
-| `judge.py` | Local game engine, map generation, batch evaluation, tournament |
-| `GameRules.md` | Cleaned game-rule reference |
-| `pool/*.cpp` | 19 candidate strategies used for comparison |
-| `replay_bot.cpp` | Replay/debug helper agent |
-| `viewer_template.html` | Self-contained replay viewer template |
-| `replay.csv`, `replay.html` | Example simulation output |
+| `main.c++` | 予選の最終heuristic agent |
+| `judge.py` | 予選用game engine、map generation、batch evaluation、tournament |
+| `GameRules.md` | 予選ルールのreference |
+| `pool/*.cpp` | 比較に使用した19個の予選候補strategy |
+| `replay_bot.cpp` | 予選のreplay/debug helper agent |
+| `viewer_template.html` | 予選のself-contained replay viewer template |
+| `NEXT_VISION/master_main.cpp` | Final Round agentの基準source |
+| `NEXT_VISION/judge.py` | Final Roundの視野とprotocolを実装したlocal judge |
+| `NEXT_VISION/README.md` | Final Roundのbuild・replay・analysis guide |
 
 ### 実行方法
 
@@ -101,6 +154,16 @@ for f in pool/*.cpp; do g++ -O2 -std=c++17 -o "${f%.cpp}.exe" "$f"; done
 python judge.py tournament pool --mode roundrobin --games 5 --workers 8 --seed 42
 ```
 
+Final Round agentのbuildとlocal match:
+
+```bash
+g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
+python3 NEXT_VISION/judge.py \
+  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
+  --games 1 --seed 42
+```
+
 ---
 
 ## English
@@ -108,6 +171,8 @@ python judge.py tournament pool --mode roundrobin --games 5 --workers 8 --seed 4
 ### Result and problem
 
 This is my solo entry for the NYPC 2026 Master Track. It ranked **19th among 1,603 teams in the qualifier (top ~1.2%)** and advanced to the Final Round.
+
+The repository root contains the qualifier agent and evaluation environment. The Final Round used different map constraints, resources, fog of war, and interaction protocol, so its implementation lives separately in [`NEXT_VISION/`](NEXT_VISION/README.md). The canonical finals source is `NEXT_VISION/master_main.cpp`, with `NEXT_VISION/judge.py` as its local simulator.
 
 Two agents move warriors across a graph battlefield, build and upgrade bases, train units at their headquarters, and try to destroy the opposing HQ. Every turn requires a joint decision over routes, gold, future income, upkeep, reinforcements, and combat.
 
@@ -136,8 +201,17 @@ Nineteen candidate agents in `pool/` were compared under repeated conditions bef
 ### Quick start
 
 ```bash
-# compare two sources; they are compiled automatically when needed
+# Qualifier: compare two sources; they are compiled automatically when needed
 python judge.py main.c++ pool/110584.cpp --games 100 --workers 8 --seed 42
+
+# Final Round: build the canonical agent
+g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
+
+# Final Round: run a reproducible local match
+python3 NEXT_VISION/judge.py \
+  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
+  --games 1 --seed 42
 ```
 
-See the Japanese section above for debugging, tournament commands, repository layout, and the simulator caveat.
+See the Korean and Japanese sections above for the repository layout, debugging and tournament commands, and simulator caveats. Finals-specific replay and analysis instructions are in [`NEXT_VISION/README.md`](NEXT_VISION/README.md).

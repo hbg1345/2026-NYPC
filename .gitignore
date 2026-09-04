@@ -12,6 +12,7 @@ pool/.all_model_eval_bins/
 # NEXT VISION local build and replay artifacts
 /NEXT_VISION/master_main
 /NEXT_VISION/sample_ai_imitation
+/NEXT_VISION/replay.csv
 /NEXT_VISION/replay.html
 /NEXT_VISION/sample_ai_replay/
 /NEXT_VISION/nation-fr-providing/debug_*.txt
