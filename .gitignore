@@ -1,9 +1,17 @@
 *.exe
 *.o
 *.obj
+.DS_Store
 __pycache__/
 *.py[cod]
 pool/.all_model_eval_bins/
 .original_eval_bin/
 .passive_hq_eval_bins/
 .stronghold_rollout_validation_tmp/
+
+# NEXT VISION local build and replay artifacts
+/NEXT_VISION/master_main
+/NEXT_VISION/sample_ai_imitation
+/NEXT_VISION/replay.html
+/NEXT_VISION/sample_ai_replay/
+/NEXT_VISION/nation-fr-providing/debug_*.txt

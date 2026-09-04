@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXT VISION 리플레이 — NYPC 2026 본선</title>
+<style>
+  :root {
+    --chrome: #1b1f26;
+    --chrome-2: #23282f;
+    --ink: #eef1f4;
+    --muted: #9aa4b1;
+    --red: #d4483a;
+    --red-soft: rgba(212,72,58,.32);
+    --blue: #2f7fd6;
+    --blue-soft: rgba(47,127,214,.32);
+    --gold: #e0b34a;
+    --good: #48b57a;
+    --land: #ece3d1;
+    --land-line: #40372a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+    background: var(--chrome); color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  button { font-family: inherit; }
+  .hud-font {
+    font-family: Bahnschrift, "Arial Narrow", sans-serif;
+    letter-spacing: 0.06em;
+  }
+  .num {
+    font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .app {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ---- Team header ---- */
+  .teambar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .team.a { background: linear-gradient(90deg, var(--red), #b83226); justify-content: flex-start; }
+  .team.b { background: linear-gradient(90deg, #2566ae, var(--blue)); justify-content: flex-end; flex-direction: row-reverse; }
+  .team .tag {
+    font-family: Bahnschrift, "Arial Narrow", sans-serif;
+    background: rgba(0,0,0,.28);
+    border-radius: 4px;
+    padding: 2px 9px;
+    font-size: 13px;
+  }
+
+  /* ---- Stats row ---- */
+  .statsbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: var(--chrome-2);
+    padding: 10px 24px;
+    border-bottom: 1px solid #000;
+  }
+  .stats-group { display: flex; gap: 26px; }
+  .stats-group.right { justify-content: flex-end; }
+  .stat {
+    text-align: center;
+    min-width: 68px;
+  }
+  .stat .hud-font {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .stat .val { font-size: 18px; font-weight: 700; }
+  .stat .delta { font-size: 11px; color: var(--good); margin-left: 4px; }
+  .stat.gold .val { color: var(--gold); }
+  .stat.bases.a .val { color: var(--red); }
+  .stat.bases.b .val { color: var(--blue); }
+
+  .turncenter { text-align: center; padding: 0 24px; }
+  .turncenter .hud-font { font-size: 10px; color: var(--muted); text-transform: uppercase; }
+  .turncenter .val { font-size: 26px; font-weight: 800; font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace; }
+  .turncenter .val .max { color: var(--muted); font-size: 15px; font-weight: 500; }
+
+  /* ---- Result banner ---- */
+  .resultbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #000;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 7px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .resultbar.hidden-mode .resultbar-text { display: none; }
+  .resultbar .chev { transition: transform .15s; color: var(--muted); }
+  .resultbar.collapsed .chev { transform: rotate(-90deg); }
+  .resultbar.idle { color: var(--muted); font-weight: 500; }
+
+  /* ---- Perspective / fog controls ---- */
+  .perspective-panel {
+    position: absolute;
+    z-index: 20;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 9px;
+    background: rgba(16,19,24,.9);
+    box-shadow: 0 8px 24px rgba(0,0,0,.28);
+    backdrop-filter: blur(5px);
+  }
+  .view-btn {
+    border: 1px solid #404751;
+    border-radius: 6px;
+    padding: 6px 10px;
+    background: #262c34;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .view-btn:hover { color: var(--ink); border-color: #6a7480; }
+  .view-btn.active[data-view="ALL"] { color: #171a1f; background: var(--gold); border-color: var(--gold); }
+  .view-btn.active[data-view="A"] { color: #fff; background: var(--red); border-color: #ff8b80; }
+  .view-btn.active[data-view="B"] { color: #fff; background: var(--blue); border-color: #8ac6ff; }
+  .view-status {
+    min-width: 118px;
+    padding: 0 7px;
+    color: #d7dde5;
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .view-status.imagining { color: #e7c4ff; }
+  .space-hint {
+    position: absolute;
+    z-index: 20;
+    top: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 9px;
+    border-radius: 6px;
+    color: #b8c1cc;
+    background: rgba(16,19,24,.76);
+    font-size: 10px;
+    pointer-events: none;
+    transition: color .12s, background .12s;
+  }
+  .mapwrap.imagination .space-hint {
+    color: #f1dcff;
+    background: rgba(99,49,130,.85);
+  }
+  .intel-panel {
+    position: absolute;
+    z-index: 19;
+    top: 92px;
+    right: 16px;
+    width: 270px;
+    padding: 10px 11px;
+    border: 1px solid #76508e;
+    border-radius: 8px;
+    background: rgba(24,20,29,.9);
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    color: #e7d8ef;
+    pointer-events: none;
+  }
+  .intel-panel[hidden] { display: none; }
+  .intel-head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 7px; color: #dc9cff; font-size: 10px; }
+  .intel-row { display: grid; grid-template-columns: 54px 1fr 1fr; gap: 7px; align-items: baseline; padding: 3px 0; font-size: 11px; }
+  .intel-row .label { color: #aeb6c0; }
+  .intel-row .estimate b { color: #e2b5ff; }
+  .intel-row .actual { color: #aeb6c0; }
+  .intel-row .actual b { color: #fff; }
+  .intel-panel:not(.compare) .actual { display: none; }
+  .intel-panel:not(.compare) .intel-row { grid-template-columns: 54px 1fr; }
+  .intel-error { margin-left: 4px; color: #f0cf7b; font-size: 9px; }
+  .intel-meta { margin-top: 7px; padding-top: 7px; border-top: 1px solid rgba(220,156,255,.2); color: #9fa8b3; font-size: 9px; line-height: 1.45; }
+
+  /* ---- Map ---- */
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    min-height: 0;
+    background: #55565a;
+  }
+  .mapwrap {
+    position: relative;
+    background: #55565a;
+    overflow: hidden;
+    cursor: grab;
+  }
+  .mapwrap.dragging { cursor: grabbing; }
+  .mapwrap svg { width: 100%; height: 100%; display: block; }
+
+  .edge {
+    stroke: rgba(31,35,41,.38);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cell {
+    stroke: var(--land-line);
+    stroke-width: 1.2;
+    fill: var(--land);
+    vector-effect: non-scaling-stroke;
+  }
+  .cell.side-A { fill: var(--red-soft); }
+  .cell.side-B { fill: var(--blue-soft); }
+  .cell.stronghold { stroke: var(--gold); stroke-width: 2; }
+  .cell.strong-empty { fill: rgba(224,179,74,.68); stroke-dasharray: 3 2; }
+  .cell.hq-node { fill: #1f2329; stroke: #fff; stroke-width: 2; }
+  .cell.fogged {
+    fill: #242930 !important;
+    stroke: #363d46;
+    stroke-width: 1;
+  }
+  .cell.imagined-territory.side-A { fill: rgba(212,72,58,.15); stroke-dasharray: 3 3; }
+  .cell.imagined-territory.side-B { fill: rgba(47,127,214,.15); stroke-dasharray: 3 3; }
+  .cell.fogged.imagined-territory.side-A { fill: rgba(212,72,58,.15) !important; stroke: #dc9cff; }
+  .cell.fogged.imagined-territory.side-B { fill: rgba(47,127,214,.15) !important; stroke: #dc9cff; }
+
+  @keyframes flashcell {
+    0%, 100% { stroke-opacity: .35; }
+    50% { stroke-opacity: 1; }
+  }
+  .cell.fought { stroke: var(--gold); stroke-width: 2.6; animation: flashcell 0.8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .cell.fought { animation: none; stroke-opacity: 1; } }
+
+  .bld-icon rect.plate {
+    stroke-width: 1.4;
+  }
+  .bld-icon.side-A rect.plate { fill: var(--red); stroke: #7a2119; }
+  .bld-icon.side-B rect.plate { fill: var(--blue); stroke: #1a4a80; }
+  .bld-icon .lvl { fill: #fff; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+  .bld-icon .hpbar-bg { fill: rgba(0,0,0,.4); }
+  .bld-icon .hpbar-fg { fill: var(--good); }
+  .bld-icon.imagined, .unit-badge.imagined { opacity: .52; filter: drop-shadow(0 0 4px #cf8cff); }
+  .bld-icon.imagined rect.plate, .unit-badge.imagined .plate {
+    stroke: #dc9cff;
+    stroke-dasharray: 3 2;
+  }
+
+  .unit-badge .plate { fill: #fff; stroke-width: 1.2; }
+  .unit-badge.side-A .plate { stroke: var(--red); }
+  .unit-badge.side-B .plate { stroke: var(--blue); }
+  .unit-badge.side-A text { fill: var(--red); }
+  .unit-badge.side-B text { fill: var(--blue); }
+  .unit-badge.estimated { opacity: .72; filter: drop-shadow(0 0 4px #cf8cff); }
+  .unit-badge.estimated .plate { fill: #2d2234; stroke: #dc9cff; stroke-dasharray: 2 2; }
+  .unit-badge.estimated text { fill: #f0ccff; font-size: 8px; }
+  .unit-badge text { font-weight: 800; text-anchor: middle; dominant-baseline: central; font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace; }
+
+  .region-marker { pointer-events: none; }
+  .region-marker text,
+  text.region-marker {
+    font-family: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    text-anchor: middle;
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: rgba(244,240,228,.96);
+    stroke-width: 2.8px;
+    stroke-linejoin: round;
+  }
+  .region-marker .region-id {
+    fill: #f4f0e8;
+    font-size: 8.5px;
+    font-weight: 800;
+    stroke: rgba(29,31,35,.92);
+    stroke-width: 2.4px;
+  }
+  .region-marker.stronghold .region-id {
+    fill: #fff3ad;
+    font-size: 12px;
+    font-weight: 900;
+    stroke: #3a2b05;
+    stroke-width: 3px;
+  }
+  .region-marker.hq .region-id { fill: #fff; font-weight: 900; stroke: #111; }
+
+  /* ---- Per-turn action log ---- */
+  .action-panel {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: #171b20;
+    border-left: 1px solid #050607;
+  }
+  .action-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px 10px;
+    border-bottom: 1px solid #30363e;
+  }
+  .action-head h2 { margin: 0; font-size: 13px; text-transform: uppercase; }
+  .action-head .turn { color: var(--gold); font-size: 11px; }
+  .action-scroll { min-height: 0; overflow: auto; padding: 10px; }
+  .action-side {
+    margin-bottom: 10px;
+    border: 1px solid #343a43;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #20252c;
+  }
+  .action-side .side-title {
+    padding: 6px 9px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .06em;
+  }
+  .action-side.side-A .side-title { color: #ffb4ac; background: rgba(212,72,58,.18); }
+  .action-side.side-B .side-title { color: #a9d4ff; background: rgba(47,127,214,.18); }
+  .action-side.events .side-title { color: #f0cf7b; background: rgba(224,179,74,.13); }
+  .action-list { margin: 0; padding: 7px 9px 8px 25px; color: #d7dce2; font-size: 11px; line-height: 1.55; }
+  .action-list li::marker { color: #6d7784; }
+  .action-list .cmd { color: var(--muted); margin-right: 5px; font-weight: 800; }
+  .action-empty { margin: 0; padding: 9px; color: #6f7883; font-size: 11px; }
+  .action-note { margin: 2px 2px 10px; color: #737d89; font-size: 10px; line-height: 1.4; }
+  .action-side.hidden-intel { border-style: dashed; opacity: .82; }
+  .action-side.hidden-intel .side-title { color: #8b949f; background: #282e36; }
+  .action-side.hidden-intel .action-empty { color: #9ba4ae; }
+  .action-side.imagined-intel { border-color: #8d5dab; box-shadow: inset 0 0 18px rgba(180,102,225,.08); }
+  .stat.masked .val { color: #727c87 !important; }
+  .stat.estimated .val { color: #dc9cff !important; }
+
+  @media (max-width: 900px) {
+    .stage { grid-template-columns: minmax(0, 1fr) 270px; }
+    .legend { display: none; }
+    .stats-group { gap: 8px; }
+    .stat { min-width: 54px; }
+  }
+
+  /* ---- zoom controls ---- */
+  .zoombar {
+    position: absolute;
+    right: 16px; bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20,22,26,.72);
+    border-radius: 8px;
+    padding: 8px 12px;
+    backdrop-filter: blur(3px);
+  }
+  .zoombar button {
+    width: 26px; height: 26px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #2a2f37;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+  }
+  .zoombar button:hover { border-color: var(--gold); color: var(--gold); }
+  .zoombar input[type=range] { width: 110px; accent-color: var(--gold); }
+  .zoombar .zoomlabel { font-size: 11px; color: var(--muted); min-width: 34px; text-align: right; font-family: "Cascadia Mono", monospace; }
+
+  .legend {
+    position: absolute;
+    left: 16px; bottom: 16px;
+    background: rgba(20,22,26,.72);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    backdrop-filter: blur(3px);
+  }
+  .legend .row { display: flex; align-items: center; gap: 8px; }
+  .legend .swatch { width: 13px; height: 13px; border-radius: 3px; flex: none; border: 1.4px solid; }
+
+  /* ---- Transport ---- */
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 20px;
+    background: var(--chrome-2);
+    border-top: 1px solid #000;
+  }
+  .transport .grp { display: flex; gap: 4px; }
+  .transport button.tbtn {
+    background: #2a2f37;
+    color: var(--ink);
+    border: 1px solid #3a4048;
+    border-radius: 6px;
+    width: 36px; height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .transport button.tbtn:hover { border-color: var(--gold); color: var(--gold); }
+  .transport button.tbtn.play { width: 44px; }
+  .transport button.tbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  .speedgrp { display: flex; gap: 3px; }
+  .speedgrp button {
+    background: #2a2f37;
+    color: var(--muted);
+    border: 1px solid #3a4048;
+    border-radius: 5px;
+    padding: 6px 9px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: "Cascadia Mono", monospace;
+  }
+  .speedgrp button.active { background: var(--gold); color: #1b1f26; border-color: var(--gold); font-weight: 700; }
+
+  .scrubber { flex: 1; position: relative; height: 32px; display: flex; align-items: center; }
+  .scrubber input[type=range] {
+    width: 100%;
+    accent-color: var(--gold);
+    position: relative;
+    z-index: 2;
+  }
+  .ticks { position: absolute; left: 0; right: 0; top: 50%; height: 6px; transform: translateY(-50%); pointer-events: none; }
+  .ticks .tick { position: absolute; top: 0; width: 2px; height: 6px; background: var(--red); opacity: .85; }
+
+  .pos { font-family: "Cascadia Mono", monospace; font-size: 12px; color: var(--muted); min-width: 70px; text-align: right; }
+  .seedtag { color: var(--muted); font-size: 11px; font-family: "Cascadia Mono", monospace; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="teambar">
+    <div class="team a"><span class="tag hud-font">A</span><span id="nameA">Agent A</span></div>
+    <div class="team b"><span class="tag hud-font">B</span><span id="nameB">Agent B</span></div>
+  </div>
+
+  <div class="statsbar">
+    <div class="stats-group left">
+      <div class="stat"><div class="hud-font">Warriors</div><div class="val num" id="warA">3</div></div>
+      <div class="stat gold"><div class="hud-font">Gold</div><div class="val num" id="goldA">750<span class="delta num" id="dGoldA"></span></div></div>
+      <div class="stat bases a"><div class="hud-font">Bases</div><div class="val num" id="basesA">0</div></div>
+    </div>
+    <div class="turncenter">
+      <div class="hud-font">Turn</div>
+      <div class="val"><span id="dayNum">0</span><span class="max"> / <span id="dayMax">400</span></span></div>
+    </div>
+    <div class="stats-group right">
+      <div class="stat bases b"><div class="hud-font">Bases</div><div class="val num" id="basesB">0</div></div>
+      <div class="stat gold"><div class="hud-font">Gold</div><div class="val num" id="goldB">750<span class="delta num" id="dGoldB"></span></div></div>
+      <div class="stat"><div class="hud-font">Warriors</div><div class="val num" id="warB">3</div></div>
+    </div>
+  </div>
+
+  <div class="resultbar idle" id="resultBar">
+    <span class="resultbar-text" id="resultText">진행 중</span>
+    <span class="chev">▾</span>
+  </div>
+
+  <div class="stage">
+    <main class="mapwrap" id="mapwrap">
+      <svg id="map" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="perspective-panel" aria-label="시야 선택">
+        <button class="view-btn active" data-view="ALL" title="0 · 전지 시야">0 · ALL</button>
+        <button class="view-btn" data-view="A" title="1 · LEFT 시야">1 · LEFT</button>
+        <button class="view-btn" data-view="B" title="2 · RIGHT 시야">2 · RIGHT</button>
+        <span class="view-status hud-font" id="viewStatus">전지 시야</span>
+      </div>
+      <div class="space-hint hud-font" id="spaceHint">1/2 진영 선택 · SPACE 홀드 = 추정 ↔ 실제 비교</div>
+      <div class="intel-panel" id="intelPanel" hidden>
+        <div class="intel-head hud-font"><span>Enemy intel</span><span id="intelMode">추정</span></div>
+        <div class="intel-row"><span class="label">Gold</span><span class="estimate">추정 <b id="intelGoldEst">0</b></span><span class="actual">실제 <b id="intelGoldActual">0</b><span class="intel-error" id="intelGoldError"></span></span></div>
+        <div class="intel-row"><span class="label">Warriors</span><span class="estimate">추정 <b id="intelWarEst">0</b></span><span class="actual">실제 <b id="intelWarActual">0</b><span class="intel-error" id="intelWarError"></span></span></div>
+        <div class="intel-meta" id="intelMeta"></div>
+      </div>
+      <div class="legend">
+        <div class="row"><span class="swatch" style="background:var(--red-soft);border-color:var(--red)"></span>RED(A) 영토</div>
+        <div class="row"><span class="swatch" style="background:var(--blue-soft);border-color:var(--blue)"></span>BLUE(B) 영토</div>
+        <div class="row"><span class="swatch" style="background:rgba(224,179,74,.4);border-color:var(--gold);border-style:dashed"></span>비어있는 거점(건설 가능)</div>
+        <div class="row"><span class="swatch" style="background:transparent;border-color:var(--gold)"></span>이번 턴 전투</div>
+        <div class="row"><span class="swatch" style="background:#242930;border-color:#363d46"></span>선택 진영의 시야 밖</div>
+        <div class="row"><span class="swatch" style="background:rgba(180,102,225,.18);border-color:#dc9cff;border-style:dashed"></span>보라색 · 추정 / SPACE · 실제 비교</div>
+      </div>
+      <div class="zoombar">
+        <button id="zoomOut" title="축소">−</button>
+        <input type="range" id="zoomRange" min="50" max="400" value="100" step="5">
+        <span class="zoomlabel"><span id="zoomLabel">100</span>%</span>
+        <button id="zoomIn" title="확대">+</button>
+        <button id="zoomFit" title="화면에 맞추기">⤢</button>
+      </div>
+    </main>
+    <aside class="action-panel" aria-label="턴별 행동 로그">
+      <div class="action-head">
+        <h2 class="hud-font">Action log</h2>
+        <span class="turn num" id="actionTurn">TURN 0</span>
+      </div>
+      <div class="action-scroll" id="actionLog"></div>
+    </aside>
+  </div>
+
+  <footer class="transport">
+    <div class="grp">
+      <button class="tbtn" id="btnFirst" title="처음으로">⏮</button>
+      <button class="tbtn" id="btnPrev" title="이전 턴">◀</button>
+      <button class="tbtn play" id="btnPlay" title="재생/일시정지 · P">▶</button>
+      <button class="tbtn" id="btnNext" title="다음 턴">▶</button>
+      <button class="tbtn" id="btnLast" title="마지막으로">⏭</button>
+    </div>
+    <div class="speedgrp" id="speedGrp">
+      <button data-s="4">x0.25</button>
+      <button data-s="2">x0.5</button>
+      <button data-s="1" class="active">x1</button>
+      <button data-s="0.5">x2</button>
+      <button data-s="0.25">x4</button>
+      <button data-s="0.12">x8</button>
+      <button data-s="0.06">x16</button>
+    </div>
+    <div class="scrubber">
+      <div class="ticks" id="ticks"></div>
+      <input type="range" id="scrub" min="0" max="0" value="0" step="1">
+    </div>
+    <span class="pos"><span id="scrubPos">0</span> / <span id="scrubMax">0</span></span>
+    <span class="seedtag" id="seedtag"></span>
+  </footer>
+</div>
+
+<script>
+const DATA = __REPLAY_JSON__;
+
+const M = DATA.map;
+const N = M.N;
+const frames = DATA.frames;
+const strongSet = new Set(M.strongholds);
+
+document.getElementById("nameA").textContent = DATA.result.nameA || "Agent A";
+document.getElementById("nameB").textContent = DATA.result.nameB || "Agent B";
+document.getElementById("seedtag").textContent = "seed=" + DATA.result.seed;
+
+// ---- project region centers into the 1000x620 viewBox ----
+const VBW = 1000, VBH = 620, PAD = 30;
+const xs = M.x, ys = M.y;
+const minX = Math.min(...xs), maxX = Math.max(...xs);
+const minY = Math.min(...ys), maxY = Math.max(...ys);
+const spanX = Math.max(1, maxX - minX), spanY = Math.max(1, maxY - minY);
+const scale = Math.min((VBW - 2 * PAD) / spanX, (VBH - 2 * PAD) / spanY);
+const offX = (VBW - spanX * scale) / 2;
+const offY = (VBH - spanY * scale) / 2;
+function projX(x) { return offX + (x - minX) * scale; }
+function projY(y) { return VBH - (offY + (y - minY) * scale); } // flip y for conventional up orientation
+function px(i) { return projX(xs[i]); }
+function py(i) { return projY(ys[i]); }
+
+const svg = document.getElementById("map");
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+const worldLayer = el("g", {id: "world"});
+svg.appendChild(worldLayer);
+const edgeLayer = el("g", {class: "edges"});
+const cellLayer = el("g", {class: "cells"});
+const labelLayer = el("g", {class: "labels"});
+const bldLayer = el("g", {class: "buildings"});
+const unitLayer = el("g", {class: "units"});
+worldLayer.appendChild(edgeLayer);
+worldLayer.appendChild(cellLayer);
+worldLayer.appendChild(labelLayer);
+worldLayer.appendChild(bldLayer);
+worldLayer.appendChild(unitLayer);
+
+// ---- draw the known graph as subtle edges and circular region nodes ----
+for (let u = 0; u < N; u++) {
+  for (const v of (M.adj[u] || [])) {
+    if (u >= v) continue;
+    edgeLayer.appendChild(el("line", {class: "edge", x1: px(u), y1: py(u), x2: px(v), y2: py(v)}));
+  }
+}
+
+const regionNodes = [];
+for (let i = 0; i < N; i++) {
+  const isStrong = strongSet.has(i);
+  const isHq = i === 0 || i === N - 1;
+  const radius = isHq ? 9 : isStrong ? 7 : 3.8;
+  const nodeClass = "cell" + (isStrong ? " stronghold" : "") +
+                    (isStrong && !isHq ? " strong-empty" : "") +
+                    (isHq ? " hq-node" : "");
+  const node = el("circle", {class: nodeClass, cx: px(i), cy: py(i), r: radius});
+  cellLayer.appendChild(node);
+  regionNodes.push(node);
+
+  // The map input is public, so region numbers remain visible through fog.
+  const markerClass = "region-marker" + (isStrong ? " stronghold" : "") + (isHq ? " hq" : "");
+  const t = el("text", {class: markerClass, x: px(i), y: py(i) - (isStrong || isHq ? 12 : 9), "aria-label": `R${i}`});
+  const regionId = el("tspan", {class: "region-id", x: px(i), dy: 0});
+  regionId.textContent = isHq ? `R${i} · HQ-${i === 0 ? "A" : "B"}` : `R${i}`;
+  t.appendChild(regionId);
+  labelLayer.appendChild(t);
+}
+
+// ---- building icon (rounded plate + level number + hp bar) ----
+function makeBuildingIcon(i) {
+  const g = el("g", {class: "bld-icon", "data-r": i, style: "display:none"});
+  const cx = px(i), cy = py(i);
+  const w = 22, h = 18;
+  const rect = el("rect", {class: "plate", x: cx - w / 2, y: cy - h / 2, width: w, height: h, rx: 3});
+  const lvl = el("text", {class: "lvl", x: cx, y: cy - 2, "font-size": 11});
+  const hpbg = el("rect", {class: "hpbar-bg", x: cx - w / 2, y: cy + h / 2 - 3, width: w, height: 3, rx: 1.5});
+  const hpfg = el("rect", {class: "hpbar-fg", x: cx - w / 2, y: cy + h / 2 - 3, width: w, height: 3, rx: 1.5});
+  g.appendChild(rect); g.appendChild(hpbg); g.appendChild(hpfg); g.appendChild(lvl);
+  g._w = w; g._cx = cx; g._hpfg = hpfg; g._lvl = lvl; g._rect = rect;
+  bldLayer.appendChild(g);
+  return g;
+}
+const bldIcons = [];
+for (let i = 0; i < N; i++) bldIcons.push(makeBuildingIcon(i));
+
+// ---- unit badge (small circular plate + count text), offset below the node ----
+function makeUnitBadge(i, dx) {
+  const cx = px(i) + dx, cy = py(i) + 22;
+  const g = el("g", {class: "unit-badge", style: "display:none"});
+  const plate = el("circle", {class: "plate", cx: cx, cy: cy, r: 9});
+  const txt = el("text", {x: cx, y: cy + 1, "font-size": 10});
+  g.appendChild(plate); g.appendChild(txt);
+  g._txt = txt;
+  unitLayer.appendChild(g);
+  return g;
+}
+const unitBadgeA = [], unitBadgeB = [];
+for (let i = 0; i < N; i++) {
+  unitBadgeA.push(makeUnitBadge(i, -12));
+  unitBadgeB.push(makeUnitBadge(i, 12));
+}
+
+// ---- HUD elements ----
+const dayNum = document.getElementById("dayNum");
+const dayMax = document.getElementById("dayMax");
+const goldA = document.getElementById("goldA"), goldB = document.getElementById("goldB");
+const dGoldA = document.getElementById("dGoldA"), dGoldB = document.getElementById("dGoldB");
+const warA = document.getElementById("warA"), warB = document.getElementById("warB");
+const basesA = document.getElementById("basesA"), basesB = document.getElementById("basesB");
+const resultBar = document.getElementById("resultBar");
+const resultText = document.getElementById("resultText");
+const actionTurn = document.getElementById("actionTurn");
+const actionLog = document.getElementById("actionLog");
+const viewStatus = document.getElementById("viewStatus");
+const intelPanel = document.getElementById("intelPanel");
+const intelMode = document.getElementById("intelMode");
+const intelGoldEst = document.getElementById("intelGoldEst");
+const intelGoldActual = document.getElementById("intelGoldActual");
+const intelGoldError = document.getElementById("intelGoldError");
+const intelWarEst = document.getElementById("intelWarEst");
+const intelWarActual = document.getElementById("intelWarActual");
+const intelWarError = document.getElementById("intelWarError");
+const intelMeta = document.getElementById("intelMeta");
+const scrub = document.getElementById("scrub");
+const scrubPos = document.getElementById("scrubPos");
+const scrubMax = document.getElementById("scrubMax");
+
+dayMax.textContent = DATA.result.maxTurn || 400;
+scrub.max = Math.max(0, frames.length - 1);
+scrubMax.textContent = scrub.max;
+
+// tick marks on the timeline for days where any combat happened
+const ticksEl = document.getElementById("ticks");
+function buildTicks() {
+  ticksEl.innerHTML = "";
+  const max = Math.max(1, frames.length - 1);
+  frames.forEach((f, i) => {
+    const fought = f.sieged.length > 0 || Object.values(f.warriors).some(w => w.A > 0 && w.B > 0);
+    if (!fought) return;
+    const d = document.createElement("div");
+    d.className = "tick";
+    d.style.left = (100 * i / max) + "%";
+    ticksEl.appendChild(d);
+  });
+}
+buildTicks();
+
+const HQ_MAX_HP = {1: 10, 2: 15, 3: 20, 4: 25, 5: 30};
+const BASE_MAX_HP = {1: 6, 2: 12, 3: 18};
+
+let idx = 0;
+let playing = false;
+let timer = null;
+let perspective = "ALL";
+let revealHeld = false;
+
+function visibilityFor(f, side) {
+  if (side === "ALL") return new Set(Array.from({length: N}, (_, r) => r));
+  const visible = new Set();
+  let frontier = [];
+  for (const b of f.buildings) if (b.side === side) frontier.push(b.r);
+  for (const [r, counts] of Object.entries(f.warriors)) if ((counts[side] || 0) > 0) frontier.push(+r);
+  for (const source of frontier) visible.add(source);
+  for (let hop = 0; hop < 2; hop++) {
+    const next = [];
+    for (const r of frontier) {
+      for (const nb of (M.adj[r] || [])) {
+        if (visible.has(nb)) continue;
+        visible.add(nb);
+        next.push(nb);
+      }
+    }
+    frontier = next;
+  }
+  return visible;
+}
+
+function setPerspective(next) {
+  perspective = next;
+  revealHeld = false;
+  document.querySelectorAll(".view-btn").forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.view === perspective));
+  renderFrame(idx);
+}
+
+function updatePerspectiveHud() {
+  const mapwrap = document.getElementById("mapwrap");
+  const imagining = perspective !== "ALL" && revealHeld;
+  mapwrap.classList.toggle("imagination", imagining);
+  viewStatus.classList.toggle("imagining", imagining);
+  if (perspective === "ALL") viewStatus.textContent = "전지 시야";
+  else if (imagining) viewStatus.textContent = `${perspective === "A" ? "LEFT" : "RIGHT"} · 추정 ↔ 실제 비교`;
+  else viewStatus.textContent = `${perspective === "A" ? "LEFT" : "RIGHT"} 실제 시야`;
+}
+
+function signedError(actual, estimate) {
+  const error = actual - estimate;
+  return `(${error > 0 ? "+" : ""}${error})`;
+}
+
+function renderIntelPanel(f) {
+  const info = perspective === "ALL" ? null : (f.intel && f.intel[perspective]);
+  if (!info) {
+    intelPanel.hidden = true;
+    return;
+  }
+  intelPanel.hidden = false;
+  intelPanel.classList.toggle("compare", revealHeld);
+  intelMode.textContent = revealHeld ? "SPACE · 실제 비교" : "FOG · 추정값";
+  intelGoldEst.textContent = info.gold;
+  intelWarEst.textContent = info.warriors;
+  intelGoldActual.textContent = info.actualGold;
+  intelWarActual.textContent = info.actualWarriors;
+  intelGoldError.textContent = signedError(info.actualGold, info.gold);
+  intelWarError.textContent = signedError(info.actualWarriors, info.warriors);
+  intelMeta.textContent =
+    `현재 직접 확인 ${info.visibleWarriors}명 · 추정 노동 ${info.workers}명 · ` +
+    `가장 오래된 적 건물권 정보 ${info.oldestAge}턴`;
+}
+
+function actionCard(title, cls, items, extraClass = "") {
+  const card = document.createElement("section");
+  card.className = `action-side ${cls} ${extraClass}`.trim();
+  const heading = document.createElement("div");
+  heading.className = "side-title hud-font";
+  heading.textContent = title;
+  card.appendChild(heading);
+  if (!items.length) {
+    const empty = document.createElement("p");
+    empty.className = "action-empty";
+    empty.textContent = "행동 없음";
+    card.appendChild(empty);
+    return card;
+  }
+  const list = document.createElement("ul");
+  list.className = "action-list num";
+  for (const item of items) {
+    const li = document.createElement("li");
+    const cmd = document.createElement("span");
+    cmd.className = "cmd";
+    cmd.textContent = item.cmd;
+    li.appendChild(cmd);
+    li.appendChild(document.createTextNode(item.text));
+    list.appendChild(li);
+  }
+  card.appendChild(list);
+  return card;
+}
+
+function sideActions(f, side) {
+  const out = [];
+  const orders = f.orders && f.orders[side];
+  if (orders) {
+    for (const move of (orders.move || [])) out.push({cmd: "MOVE", text: `${move.id} → R${move.to}`});
+    for (const r of (orders.upgrade || [])) out.push({cmd: "BUILD", text: `R${r} 건설/강화 요청`});
+    if (orders.train > 0) out.push({cmd: "TRAIN", text: `${orders.train}명 요청`});
+    return out;
+  }
+
+  // Older self-contained replays lack raw command orders, but can still show
+  // the actions that the judge actually applied during the turn.
+  for (const u of (f.upgraded || []).filter(v => v.side === side)) out.push({cmd: "BUILD", text: `R${u.r} 건설/강화`});
+  for (const move of (f.moved || []).filter(v => v.side === side)) out.push({cmd: "MOVE", text: `${move.id} · R${move.src} → R${move.to}`});
+  const trained = (f.trained || []).filter(v => v.side === side);
+  if (trained.length) out.push({cmd: "TRAIN", text: trained.map(v => v.id).join(", ")});
+  return out;
+}
+
+function turnEvents(f, visible = null) {
+  const out = [];
+  const canSee = r => visible === null || visible.has(r);
+  const unitRegion = id => {
+    const unit = (f.warrior_units || []).find(w => w.id === id);
+    return unit ? unit.r : null;
+  };
+  if (f.orders) {
+    for (const u of (f.upgraded || [])) if (canSee(u.r)) out.push({cmd: "APPLY", text: `${u.side} · R${u.r} 건설/강화 완료`});
+    for (const move of (f.moved || [])) if (canSee(move.src) || canSee(move.to)) out.push({cmd: "STEP", text: `${move.id} · R${move.src} → R${move.to}`});
+    const trained = (f.trained || []).filter(v => canSee(v.side === "A" ? 0 : N - 1));
+    if (trained.length) out.push({cmd: "SPAWN", text: trained.map(v => v.id).join(", ")});
+  }
+  for (const d of (f.damaged || [])) {
+    const r = d.r ?? unitRegion(d.id);
+    if (visible === null || d.side === perspective || (r !== null && canSee(r)))
+      out.push({cmd: "DAMAGE", text: `${d.id} -${d.dmg} HP${d.cause ? ` · ${d.cause}` : ""}`});
+  }
+  for (const s of (f.sieged || [])) if (canSee(s.r)) out.push({cmd: "SIEGE", text: `R${s.r} 건물 -${s.dmg} HP`});
+  return out;
+}
+
+function renderActionLog(f, visible) {
+  actionTurn.textContent = `TURN ${f.t}`;
+  if (perspective === "ALL") {
+    actionLog.replaceChildren(
+      actionCard("RED · A", "side-A", sideActions(f, "A")),
+      actionCard("BLUE · B", "side-B", sideActions(f, "B")),
+      actionCard("RESULT", "events", turnEvents(f))
+    );
+    return;
+  }
+  const enemy = perspective === "A" ? "B" : "A";
+  const ownCard = actionCard(perspective === "A" ? "LEFT · A" : "RIGHT · B",
+                             perspective === "A" ? "side-A" : "side-B",
+                             sideActions(f, perspective));
+  const enemyCard = revealHeld
+    ? actionCard(`${enemy === "A" ? "LEFT" : "RIGHT"} · ${enemy} · 실제`,
+                 enemy === "A" ? "side-A" : "side-B", sideActions(f, enemy), "imagined-intel")
+    : actionCard(`${enemy === "A" ? "LEFT" : "RIGHT"} · ${enemy}`,
+                 enemy === "A" ? "side-A" : "side-B", [], "hidden-intel");
+  if (!revealHeld) enemyCard.querySelector(".action-empty").textContent = "상대 명령은 비공개 · SPACE로 실제 확인";
+  actionLog.replaceChildren(
+    ownCard,
+    enemyCard,
+    actionCard(revealHeld ? "RESULT · 실제 전체" : "RESULT · 관측됨", "events",
+               turnEvents(f, revealHeld ? null : visible), revealHeld ? "imagined-intel" : "")
+  );
+  if (!f.orders) {
+    const note = document.createElement("p");
+    note.className = "action-note";
+    note.textContent = "이전 형식의 리플레이: 명령 원문 대신 실제 적용된 행동을 표시합니다.";
+    actionLog.appendChild(note);
+  }
+}
+
+function renderFrame(i) {
+  const f = frames[i];
+  const visible = visibilityFor(f, perspective);
+  const enemySide = perspective === "A" ? "B" : "A";
+  dayNum.textContent = f.t;
+  updatePerspectiveHud();
+  renderIntelPanel(f);
+  renderActionLog(f, visible);
+
+  const gA = f.gold.A, gB = f.gold.B;
+  const deltaA = i > 0 ? gA - frames[i - 1].gold.A : 0;
+  const deltaB = i > 0 ? gB - frames[i - 1].gold.B : 0;
+
+  let wA = 0, wB = 0;
+  for (const r in f.warriors) { wA += f.warriors[r].A; wB += f.warriors[r].B; }
+
+  let bA = 0, bB = 0;
+  for (const b of f.buildings) if (b.type === "BASE") { if (b.side === "A") bA++; else bB++; }
+
+  const maskA = perspective === "B" && !revealHeld;
+  const maskB = perspective === "A" && !revealHeld;
+  const perspectiveIntel = perspective === "ALL" ? null : (f.intel && f.intel[perspective]);
+  const setTeamStats = (side, masked, gold, delta, warriors, bases) => {
+    const goldEl = side === "A" ? goldA : goldB;
+    const deltaEl = side === "A" ? dGoldA : dGoldB;
+    const warEl = side === "A" ? warA : warB;
+    const baseEl = side === "A" ? basesA : basesB;
+    const estimate = masked && perspectiveIntel && perspectiveIntel.enemy === side
+      ? perspectiveIntel : null;
+    goldEl.firstChild.textContent = estimate ? `≈${estimate.gold}` : (masked ? "?" : gold);
+    deltaEl.textContent = masked || delta === 0 ? "" : (delta > 0 ? " +" + delta : " " + delta);
+    deltaEl.style.color = delta < 0 ? "var(--red)" : "var(--good)";
+    warEl.textContent = estimate ? `≈${estimate.warriors}` : (masked ? "?" : warriors);
+    baseEl.textContent = masked ? "?" : bases;
+    goldEl.closest(".stat").classList.toggle("masked", masked && !estimate);
+    warEl.closest(".stat").classList.toggle("masked", masked && !estimate);
+    baseEl.closest(".stat").classList.toggle("masked", masked);
+    goldEl.closest(".stat").classList.toggle("estimated", !!estimate);
+    warEl.closest(".stat").classList.toggle("estimated", !!estimate);
+    baseEl.closest(".stat").classList.remove("estimated");
+  };
+  setTeamStats("A", maskA, gA, deltaA, wA, bA);
+  setTeamStats("B", maskB, gB, deltaB, wB, bB);
+
+  // reset cells/icons
+  for (let r = 0; r < N; r++) {
+    const isStrong = strongSet.has(r);
+    const isHq = r === 0 || r === N - 1;
+    let base = "cell" + (isStrong ? " stronghold" : "") +
+               (isStrong && !isHq ? " strong-empty" : "") +
+               (isHq ? " hq-node" : "");
+    if (perspective !== "ALL" && !visible.has(r)) base += " fogged";
+    regionNodes[r].setAttribute("class", base);
+    bldIcons[r].style.display = "none";
+    unitBadgeA[r].style.display = "none";
+    unitBadgeB[r].style.display = "none";
+  }
+
+  for (const b of f.buildings) {
+    const actuallySeen = perspective === "ALL" || b.side === perspective || visible.has(b.r);
+    const imagined = !actuallySeen && revealHeld && b.side === enemySide;
+    if (!actuallySeen && !imagined) continue;
+    const fogged = perspective !== "ALL" && !visible.has(b.r);
+    const cls = "cell side-" + b.side + (strongSet.has(b.r) ? " stronghold" : "") +
+                (b.type === "HQ" ? " hq-node" : "") + (fogged ? " fogged" : "") +
+                (imagined ? " imagined-territory" : "");
+    regionNodes[b.r].setAttribute("class", cls);
+    const g = bldIcons[b.r];
+    g.style.display = "";
+    g.setAttribute("class", "bld-icon side-" + b.side + (imagined ? " imagined" : ""));
+    g._lvl.textContent = b.type === "HQ" ? "H" + b.level : b.level;
+    const maxhp = b.type === "HQ" ? (HQ_MAX_HP[b.level] || 30) : (BASE_MAX_HP[b.level] || 18);
+    const frac = Math.max(0, Math.min(1, b.hp / maxhp));
+    g._hpfg.setAttribute("width", g._w * frac);
+  }
+
+  for (const rStr in f.warriors) {
+    const r = +rStr;
+    const w = f.warriors[rStr];
+    const showA = w.A > 0 && (perspective === "ALL" || perspective === "A" || visible.has(r) || revealHeld);
+    const showB = w.B > 0 && (perspective === "ALL" || perspective === "B" || visible.has(r) || revealHeld);
+    const imagineA = showA && perspective === "B" && !visible.has(r) && revealHeld;
+    const imagineB = showB && perspective === "A" && !visible.has(r) && revealHeld;
+    if (showA) {
+      unitBadgeA[r].style.display = "";
+      unitBadgeA[r].setAttribute("class", "unit-badge side-A" + (imagineA ? " imagined" : ""));
+      unitBadgeA[r]._txt.textContent = w.A;
+    }
+    if (showB) {
+      unitBadgeB[r].style.display = "";
+      unitBadgeB[r].setAttribute("class", "unit-badge side-B" + (imagineB ? " imagined" : ""));
+      unitBadgeB[r]._txt.textContent = w.B;
+    }
+  }
+
+  // In normal fog view, show the model's remembered enemy distribution as
+  // purple estimate badges.  Holding Space replaces these with actual units.
+  if (perspective !== "ALL" && !revealHeld && perspectiveIntel && perspectiveIntel.regions) {
+    const enemy = perspectiveIntel.enemy;
+    const badges = enemy === "A" ? unitBadgeA : unitBadgeB;
+    for (const [rStr, count] of Object.entries(perspectiveIntel.regions)) {
+      const r = +rStr;
+      if (count <= 0 || visible.has(r)) continue;
+      badges[r].style.display = "";
+      badges[r].setAttribute("class", `unit-badge side-${enemy} estimated`);
+      badges[r]._txt.textContent = `≈${count}`;
+    }
+  }
+
+  const fought = new Set();
+  for (const d of f.sieged) fought.add(d.r);
+  for (const rStr in f.warriors) {
+    const w = f.warriors[rStr];
+    if (w.A > 0 && w.B > 0) fought.add(+rStr);
+  }
+  for (const r of fought) {
+    if (perspective !== "ALL" && !visible.has(r) && !revealHeld) continue;
+    const cur = regionNodes[r].getAttribute("class");
+    regionNodes[r].setAttribute("class", cur + " fought");
+  }
+
+  scrub.value = i;
+  scrubPos.textContent = i;
+
+  if (i === frames.length - 1 && DATA.result) {
+    const res = DATA.result;
+    resultBar.className = "resultbar";
+    resultText.textContent = res.winner
+      ? ((res.winner === "A" ? (DATA.result.nameA || "A") : (DATA.result.nameB || "B")) + " 승리 · " + res.reason)
+      : "무승부 · " + res.reason;
+  } else {
+    resultBar.className = "resultbar idle";
+    resultText.textContent = "진행 중";
+  }
+}
+
+function goto(i) {
+  idx = Math.max(0, Math.min(frames.length - 1, i));
+  renderFrame(idx);
+}
+
+function stop() {
+  playing = false;
+  document.getElementById("btnPlay").textContent = "▶";
+  if (timer) { clearInterval(timer); timer = null; }
+}
+let curSpeed = 1;
+function play() {
+  if (idx >= frames.length - 1) idx = 0;
+  playing = true;
+  document.getElementById("btnPlay").textContent = "❚❚";
+  if (timer) clearInterval(timer);
+  timer = setInterval(() => {
+    if (idx >= frames.length - 1) { stop(); return; }
+    goto(idx + 1);
+  }, curSpeed * 1000);
+}
+
+document.getElementById("btnPlay").addEventListener("click", () => { playing ? stop() : play(); });
+document.getElementById("btnNext").addEventListener("click", () => { stop(); goto(idx + 1); });
+document.getElementById("btnPrev").addEventListener("click", () => { stop(); goto(idx - 1); });
+document.getElementById("btnFirst").addEventListener("click", () => { stop(); goto(0); });
+document.getElementById("btnLast").addEventListener("click", () => { stop(); goto(frames.length - 1); });
+document.querySelectorAll("#speedGrp button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#speedGrp button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    curSpeed = +btn.dataset.s;
+    if (playing) play();
+  });
+});
+scrub.addEventListener("input", () => { stop(); goto(+scrub.value); });
+resultBar.addEventListener("click", () => resultBar.classList.toggle("collapsed"));
+document.querySelectorAll(".view-btn").forEach(btn =>
+  btn.addEventListener("click", () => setPerspective(btn.dataset.view)));
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.code === "Digit0" || e.code === "Numpad0") setPerspective("ALL");
+  else if (e.code === "Digit1" || e.code === "Numpad1") setPerspective("A");
+  else if (e.code === "Digit2" || e.code === "Numpad2") setPerspective("B");
+  else if (e.code === "Space") {
+    e.preventDefault();
+    if (perspective !== "ALL" && !revealHeld) {
+      revealHeld = true;
+      renderFrame(idx);
+    }
+  }
+  else if (e.code === "KeyP") { playing ? stop() : play(); }
+  else if (e.key === "ArrowRight") { stop(); goto(idx + 1); }
+  else if (e.key === "ArrowLeft") { stop(); goto(idx - 1); }
+});
+document.addEventListener("keyup", (e) => {
+  if (e.code === "Space" && revealHeld) {
+    revealHeld = false;
+    renderFrame(idx);
+  }
+});
+window.addEventListener("blur", () => {
+  if (!revealHeld) return;
+  revealHeld = false;
+  renderFrame(idx);
+});
+
+// ---- zoom / pan ----
+const mapwrap = document.getElementById("mapwrap");
+const zoomRange = document.getElementById("zoomRange");
+const zoomLabel = document.getElementById("zoomLabel");
+let zoom = 1, panX = 0, panY = 0;
+function applyTransform() {
+  worldLayer.setAttribute("transform", `translate(${panX},${panY}) scale(${zoom})`);
+  zoomRange.value = Math.round(zoom * 100);
+  zoomLabel.textContent = Math.round(zoom * 100);
+}
+function setZoom(z, cx, cy) {
+  z = Math.max(0.5, Math.min(4, z));
+  if (cx === undefined) { cx = VBW / 2; cy = VBH / 2; }
+  const wx = (cx - panX) / zoom, wy = (cy - panY) / zoom;
+  zoom = z;
+  panX = cx - wx * zoom;
+  panY = cy - wy * zoom;
+  applyTransform();
+}
+document.getElementById("zoomIn").addEventListener("click", () => setZoom(zoom * 1.2));
+document.getElementById("zoomOut").addEventListener("click", () => setZoom(zoom / 1.2));
+document.getElementById("zoomFit").addEventListener("click", () => { zoom = 1; panX = 0; panY = 0; applyTransform(); });
+zoomRange.addEventListener("input", () => setZoom(+zoomRange.value / 100));
+
+function svgPoint(evt) {
+  const rect = svg.getBoundingClientRect();
+  const sx = (evt.clientX - rect.left) / rect.width * VBW;
+  const sy = (evt.clientY - rect.top) / rect.height * VBH;
+  return [sx, sy];
+}
+mapwrap.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  const [sx, sy] = svgPoint(e);
+  setZoom(zoom * (e.deltaY < 0 ? 1.1 : 1 / 1.1), sx, sy);
+}, {passive: false});
+
+let dragging = false, lastX = 0, lastY = 0;
+mapwrap.addEventListener("mousedown", (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; mapwrap.classList.add("dragging"); });
+window.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+  panX += (e.clientX - lastX);
+  panY += (e.clientY - lastY);
+  lastX = e.clientX; lastY = e.clientY;
+  applyTransform();
+});
+window.addEventListener("mouseup", () => { dragging = false; mapwrap.classList.remove("dragging"); });
+
+applyTransform();
+renderFrame(0);
+</script>
+</body>
+</html>
