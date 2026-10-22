@@ -1,217 +1,131 @@
-# NYPC 2026 Master Track Agents
+# NYPC 2026 마스터 트랙 게임 에이전트
 
-[한국어](#한국어) | [日本語](#日本語) | [English](#english)
+병력을 이동하고 기지를 건설해 상대 본부를 파괴하는 전략 게임의 에이전트를 개발했습니다.
+상황별 판단 규칙을 직접 설계하는 휴리스틱 방식으로 구현했으며, C++ 에이전트와 Python 대전·분석 도구를 만들었습니다.
 
-## 한국어
+**예선 19위로 본선 진출 · 본선 23팀 중 22위**
 
-### 저장소 개요
+| 항목 | 내용 |
+| --- | --- |
+| 대회 | 넥슨 영 프로그래머스 컵(NYPC) 2026 마스터 트랙 |
+| 참가 형태 | 1인 팀 |
+| 팀명 | 예쁜 말 고운 말 - 1558 |
+| 담당 범위 | 전략 설계, 에이전트 구현, 로컬 대전 환경과 리플레이 분석 도구 개발 |
+| 주요 기술 | C++, Python, 그래프 알고리즘, 전투 시뮬레이션, 멀티프로세싱 |
 
-NYPC 2026 Master Track에 개인으로 참가해 **예선 1,603팀 중 19위(상위 약 1.2%)**로 본선에 진출했습니다.
+[공식 예선 결과](https://new.nypc.co.kr/ko/rank/2026/master/qualification?page=1) · [공식 본선 결과](https://new.nypc.co.kr/ko/rank/2026/master/finals?page=2)
 
-이 저장소에는 예선과 본선 에이전트가 함께 있습니다. 두 라운드는 전장 크기, 초기 자원, 최대 턴, 시야 및 인터랙션 프로토콜이 다르므로 작업 경로를 분리했습니다.
+## 어떤 문제를 푸는 게임인가요?
 
-| 경로 | 용도 |
-|---|---|
-| `main.c++` | 예선 최종 휴리스틱 에이전트 |
-| `judge.py` | 예선 로컬 심판, 맵 생성, 배치 평가 및 토너먼트 |
-| `GameRules.md` | 예선 규칙 정리 |
-| `pool/*.cpp` | 예선 비교 평가에 사용한 후보 전략 |
-| [`NEXT_VISION/`](NEXT_VISION/README.md) | 본선 전용 소스, 규칙, 로컬 심판 및 분석 도구 |
-| `NEXT_VISION/master_main.cpp` | 현재 본선 전략의 기준 소스 |
-| `NEXT_VISION/judge.py` | 본선 규칙과 시야 프로토콜을 반영한 로컬 심판 |
+여러 지역이 길로 연결된 전장에서 두 에이전트가 대결합니다.
+매 턴 병력 이동, 기지 건설과 업그레이드, 병력 훈련을 결정해 상대 본부를 파괴해야 합니다.
+금화와 병력이 제한되어 있어 공격할 대상뿐 아니라 기지에 투자할 시점, 방어에 남길 병력과 이동 시간을 함께 판단해야 합니다.
 
-### 예선과 본선
+## 저장소 구성
 
-| 항목 | 예선 | 본선 `NEXT VISION` |
-|---|---:|---:|
-| 전장 구역 수 | 51–109 | 181–249 |
-| 초기 금화 | 500 | 750 |
-| 최대 턴 | 200 | 400 |
-| 관측 | 전체 상태 | 아군 전사·건물에서 그래프 거리 2 이내 |
-| 기준 C++ | C++17 | C++20 |
+루트의 `main.c++`와 `judge.py`는 예선 구현입니다.
+본선은 시야와 입력 규칙이 달라 [NEXT_VISION/](NEXT_VISION/README.md)에서 별도로 관리합니다.
+아래 핵심 구현 설명은 예선 에이전트를 중심으로 정리했습니다.
 
-### 빠른 시작
+| 구분 | 예선 | 본선 |
+| --- | --- | --- |
+| 관측 정보 | 전체 전장 상태 | 아군 전사·건물 주변의 제한된 시야 |
+| 최대 진행 턴 | 200 | 400 |
+| 기준 코드 | [main.c++](main.c++) | [NEXT_VISION/master_main.cpp](NEXT_VISION/master_main.cpp) |
+| C++ 기준 | C++17 | C++20 |
+| 로컬 대전 환경 | [judge.py](judge.py) | [NEXT_VISION/judge.py](NEXT_VISION/judge.py) |
 
-예선 에이전트 두 개를 100게임 비교합니다.
-
-```bash
-python3 judge.py main.c++ pool/110584.cpp --games 100 --workers 8 --seed 42
-```
-
-본선 기준 에이전트를 빌드하고 로컬 대전을 실행합니다.
-
-```bash
-g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
-  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
-
-python3 NEXT_VISION/judge.py \
-  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
-  --games 1 --seed 42
-```
-
-본선 폴더의 자세한 파일 설명과 리플레이 분석 방법은 [`NEXT_VISION/README.md`](NEXT_VISION/README.md)를 참고하세요. 로컬 실행 파일, 디버그 로그, 원본 리플레이와 생성된 HTML은 Git에 포함하지 않습니다.
-
-## 日本語
-
-### 結果
-
-NYPC 2026 Master Trackに個人で参加し、**予選1,603チーム中19位（上位約1.2%）**でFinal Roundへ進出しました。
-
-repository rootには予選用agentとlocal judgeを保存し、ルール・視野・protocolが異なるFinal Round用実装は[`NEXT_VISION/`](NEXT_VISION/README.md)に分離しています。Final Roundの基準sourceは`NEXT_VISION/master_main.cpp`、local judgeは`NEXT_VISION/judge.py`です。
-
-この競技では、2人のagentがgraph状の戦場で戦士を移動させ、拠点へbaseを建設・upgradeし、HQで兵力を訓練しながら相手HQの破壊を目指します。各turnで限られたgoldを移動、建設、訓練へ配分するため、最短経路だけでなく、将来の収入、維持費、増援、turret damage、残りturnを同時に判断する必要があります。
-
-私はC++17によるheuristic agent、公式ルールを再現するPython judge、map generator、replay viewer、候補戦略のtournament環境を設計・実装しました。
-
-### 戦略の構造
+## 전략의 처리 흐름
 
 ```mermaid
 flowchart LR
-    I["Current game state"] --> P["All-pairs paths"]
-    P --> E["Economy / expansion forecast"]
-    P --> C["Combat forward simulation"]
-    E --> D["Defense and build allocation"]
-    C --> A["Attack force and synchronized arrival"]
-    D --> O["MOVE / BUILD / ATTACK / TRAIN commands"]
-    A --> O
+    State[현재 전장 정보] --> Path[지역 간 최단 경로]
+    Path --> Economy[기지 건설과 자원 배분 판단]
+    Path --> Combat[공격·방어 시뮬레이션]
+    Economy --> Command[이동·건설·공격·훈련 명령]
+    Combat --> Command
 ```
 
-### 技術的に注力した点
+## 주요 고민과 구현
 
-#### 1. Floyd-Warshallによる全点対最短経路
+### 1. 이동 경로와 기지 건설을 함께 판단
 
-戦場は51～109 regionのweighted graphです。初期化時にFloyd-Warshallで全region間の距離を計算し、各source-target pairのnext hopとhop数も保存します。その後の拠点候補、援軍、敵HQへの進軍、移動中の敵兵の目標推定は同じpath tableを使用します。
+전장 구조가 경기 중 바뀌지 않아, 모든 지역 사이의 최단 경로를 구하는 Floyd–Warshall 알고리즘으로 거리와 다음 이동 지점을 미리 계산했습니다.
+이 정보를 기지 후보 선택, 병력 지원과 공격 경로 판단에 재사용했습니다.
 
-距離だけで建設を決めるのではなく、到着・建設までのturn、残りturnで得られるincome、建設・upgrade・移動・維持costを比較します。費用を制限時間内に回収できないbaseは候補から除外し、短期的な領土拡大が終盤のgold不足につながらないようにしました。
+기지는 가까운 곳이라는 이유만으로 건설하지 않도록 했습니다.
+이동·건설에 필요한 시간과 비용, 유지비와 남은 턴의 예상 수익을 함께 계산해 자원을 배분했습니다.
 
-#### 2. `assaultOutcome`による攻撃・防御のforward simulation
+### 2. 전투를 미리 계산해 공격·방어 병력 결정
 
-「最も近い敵へ進む」規則では、中間拠点、両軍の増援、turret、訓練、gold変化を扱えません。そこで、敵HQやbaseへ到達するまでをturn単位で進める`assaultOutcome`を実装しました。
+상대와의 거리나 현재 병력 수만으로는 이동 중인 지원 병력과 추가 훈련의 영향을 판단하기 어려웠습니다.
+병력 도착, 건물 내구도, 전투 피해와 자원 변화를 턴 단위로 계산하는 시뮬레이션을 구현했습니다.
+이를 이용해 공격에 필요한 병력과 방어를 위해 남겨야 할 병력을 구했습니다.
 
-simulationは兵力の到着時点、building HP、turret/unit damage、双方のgold・income・upgrade・追加訓練を更新します。`plan_attack_force`は新規投入人数を増やしながら勝てる最小兵力を探索し、予測誤差に対して`ATTACK_SAFETY_MARGIN`を追加します。逆向きのsimulationでは、現在の敵進軍を防ぐために必要な守備兵力を計算します。
+이미 건설이나 공격에 투입한 병력이 다음 턴의 판단으로 다른 역할에 재배치되지 않도록 이동 목적을 유지했습니다.
+서로 다른 위치의 병력을 모아 공격할 때는 이동 시간을 고려해 도착 시점을 맞추도록 했습니다.
 
-#### 3. 複数turnにまたがる部隊の目的と同期
+관련 코드: [예선 에이전트](main.c++)
 
-戦士には`NONE`、`MOVE`、`BUILD`、`ATTACK`の目的を保持します。これにより、すでに建設や総攻撃へcommitした兵力を、次turnの別判断で誤って再配置しません。
+### 3. 전략을 비교하고 실패 원인을 확인할 평가 환경 구축
 
-異なる位置の兵力を同時に到着させるため、path長に合わせた`holdTurns`をsimulationへ反映します。攻撃対象が変わっても、集結地点と目的を追跡し、投入済みの兵力、追加訓練、移動costを重複計上しないようにしました。
+Python으로 게임 규칙을 구현한 로컬 대전 환경을 만들었습니다.
+맵 생성, 이동·건설·훈련·전투 처리, 후보 전략 간 반복 대전과 토너먼트 평가를 지원합니다.
+여러 맵에서 진영을 번갈아 배정하며 후보 전략의 승수와 점수를 비교했습니다.
 
-#### 4. 公式ルールを再現したlocal judge
+CSV 경기 기록과 HTML 리플레이 뷰어로 어느 시점의 판단이 패배로 이어졌는지 확인했습니다.
+고정된 맵이나 기록된 상대 명령을 재생하는 기능도 구현해 특정 상황을 다시 살펴볼 수 있도록 했습니다.
 
-1つのmapや開始sideで勝っただけでは、戦略改善を判断できません。`judge.py`では、規則書に基づき次を実装しました。
+관련 코드: [로컬 대전과 평가](judge.py) · [리플레이 뷰어](viewer_template.html) · [후보 전략](pool/)
 
-- point symmetryを持つmapの生成
-- 2段階のVoronoi centroid relaxation
-- Delaunay/Voronoi ridgeに基づくgraph edge
-- 建設、移動、訓練、戦闘、income、upkeepを最大200 turn実行
-- seed、LEFT/RIGHT side、mapを変えた並列対戦
-- CSV log、JSON replay、self-contained HTML viewer
-- round-robin / Swiss tournament
+## 결과와 돌아본 점
 
-`pool/`には19個のC++候補戦略を保存しています。同じseed条件でsideを入れ替えながら対戦させ、win countとscoreを比較し、特定のopponentやmapにだけ有効な変更を除外した後でfinal agentへ反映しました。
+예선에서 19위로 본선에 진출했고, 본선에서는 23팀 중 22위를 기록했습니다.
+전략을 구현하는 일과 함께, 변경한 전략을 반복해서 비교하고 경기 기록에서 원인을 찾는 과정의 중요성을 경험했습니다.
 
-> `judge.py`は規則書を可能な限り再現したlocal simulatorであり、公式judge binaryではありません。post-relaxation centroidの整数化など、protocol上必要な差分はsource headerに明記しています。
+예선은 상대 정보를 모두 볼 수 있었지만 본선에서는 시야 밖의 정보를 알 수 없었습니다.
+이에 맞춰 입력 처리, 전략과 평가 환경을 함께 조정해야 했으며, 관측할 수 있는 정보의 범위를 전략의 전제로 다루는 것이 중요했습니다.
 
-### Repository layout
+로컬 대전 환경은 공개 규칙을 바탕으로 직접 구현한 시뮬레이터입니다.
+로컬 승률만으로 공식 대회 환경에서의 성능을 보장할 수는 없습니다.
+또한 현재 토너먼트는 경기마다 맵을 생성하고 진영을 번갈아 배정하므로, 같은 맵에서 진영만 바꾸는 짝 비교를 보완할 여지가 있습니다.
 
-| Path | Role |
-|---|---|
-| `main.c++` | 予選の最終heuristic agent |
-| `judge.py` | 予選用game engine、map generation、batch evaluation、tournament |
-| `GameRules.md` | 予選ルールのreference |
-| `pool/*.cpp` | 比較に使用した19個の予選候補strategy |
-| `replay_bot.cpp` | 予選のreplay/debug helper agent |
-| `viewer_template.html` | 予選のself-contained replay viewer template |
-| `NEXT_VISION/master_main.cpp` | Final Round agentの基準source |
-| `NEXT_VISION/judge.py` | Final Roundの視野とprotocolを実装したlocal judge |
-| `NEXT_VISION/README.md` | Final Roundのbuild・replay・analysis guide |
+## 주요 파일
 
-### 実行方法
+| 파일·폴더 | 역할 |
+| --- | --- |
+| [main.c++](main.c++) | 예선 최종 휴리스틱 에이전트 |
+| [GameRules.md](GameRules.md) | 예선 규칙 정리 |
+| [judge.py](judge.py) | 맵 생성, 로컬 대전, 토너먼트와 경기 기록 생성 |
+| [pool/](pool/) | 비교 평가에 사용한 후보 전략 |
+| [replay_bot.cpp](replay_bot.cpp) | 경기 기록 재생을 위한 도구 |
+| [viewer_template.html](viewer_template.html) | HTML 리플레이 템플릿 |
+| [NEXT_VISION/](NEXT_VISION/README.md) | 본선 규칙에 맞춘 에이전트와 분석 도구 |
 
-Requirements:
+## 실행 방법
 
-- Python 3.11+
-- `numpy`, `scipy`, `tqdm`
-- `g++` with C++17 support
-
-2つのsourceを100 gameで比較します。sourceは必要に応じて自動compileされます。
+예선 실행에는 Python 3.11 이상과 C++17을 지원하는 `g++`이 필요합니다.
+Python 패키지는 `numpy`, `scipy`, `tqdm`을 사용합니다.
 
 ```bash
+pip install numpy scipy tqdm
 python judge.py main.c++ pool/110584.cpp --games 100 --workers 8 --seed 42
 ```
 
-固定mapや相手commandを再現するdebug mode:
+소스 파일은 필요할 때 자동으로 컴파일됩니다. 저장소의 `sim/out/`에서 생성된 경기 기록과 HTML 리플레이를 확인할 수 있습니다.
+
+기록된 경기나 상대 명령 재생:
 
 ```bash
-python judge.py main.c++ pool/110584.cpp --map-file <log-or-map-file>
-python judge.py main.c++ --replay <match-log> --replay-side B
+python judge.py main.c++ pool/110584.cpp --map-file <경기-로그-파일>
+python judge.py main.c++ --replay <경기-로그-파일> --replay-side B
 ```
 
-candidate poolをround-robinで比較する場合は、先にexecutableを用意します。
+본선 기준 소스 빌드와 로컬 대전:
 
 ```bash
-for f in pool/*.cpp; do g++ -O2 -std=c++17 -o "${f%.cpp}.exe" "$f"; done
-python judge.py tournament pool --mode roundrobin --games 5 --workers 8 --seed 42
+g++ -std=c++20 -O2 -Wall -Wextra -pedantic NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
+python NEXT_VISION/judge.py NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp --games 1 --seed 42
 ```
 
-Final Round agentのbuildとlocal match:
-
-```bash
-g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
-  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
-python3 NEXT_VISION/judge.py \
-  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
-  --games 1 --seed 42
-```
-
----
-
-## English
-
-### Result and problem
-
-This is my solo entry for the NYPC 2026 Master Track. It ranked **19th among 1,603 teams in the qualifier (top ~1.2%)** and advanced to the Final Round.
-
-The repository root contains the qualifier agent and evaluation environment. The Final Round used different map constraints, resources, fog of war, and interaction protocol, so its implementation lives separately in [`NEXT_VISION/`](NEXT_VISION/README.md). The canonical finals source is `NEXT_VISION/master_main.cpp`, with `NEXT_VISION/judge.py` as its local simulator.
-
-Two agents move warriors across a graph battlefield, build and upgrade bases, train units at their headquarters, and try to destroy the opposing HQ. Every turn requires a joint decision over routes, gold, future income, upkeep, reinforcements, and combat.
-
-I implemented the C++17 heuristic agent and a Python evaluation environment containing the game engine, map generator, replay viewer, batch runner, and candidate tournament.
-
-### Engineering highlights
-
-#### Graph planning and economy
-
-Floyd-Warshall precomputes all-pairs weighted distance, next hop, and hop count for the 51–109 region graph. Expansion decisions compare travel/build time and remaining-turn income against movement, construction, upgrade, and upkeep cost; bases that cannot repay their cost before the 200-turn limit are excluded.
-
-#### Turn-by-turn combat simulation
-
-`assaultOutcome` simulates arrivals, building and turret damage, unit combat, gold, income, upgrades, and additional training. `plan_attack_force` searches for the minimum winning force and adds a safety margin. The inverse defensive simulation estimates how many units a threatened base must retain.
-
-#### Persistent intent across turns
-
-Each warrior retains one of `NONE`, `MOVE`, `BUILD`, or `ATTACK`. Already committed units are therefore not accidentally reassigned by the next turn's heuristic. `holdTurns` synchronizes forces coming from paths of different lengths, while committed units and future training are accounted for only once.
-
-#### Reproducible local evaluation
-
-The local judge reproduces the written rules, including symmetric map generation, two Voronoi centroid-relaxation passes, Delaunay/ridge adjacency, and up to 200 turns of build/move/train/combat/economy. It varies map seeds and starting sides, emits CSV/JSON/HTML replays, and supports parallel head-to-head, round-robin, and Swiss evaluation.
-
-Nineteen candidate agents in `pool/` were compared under repeated conditions before changes were integrated into `main.c++`.
-
-### Quick start
-
-```bash
-# Qualifier: compare two sources; they are compiled automatically when needed
-python judge.py main.c++ pool/110584.cpp --games 100 --workers 8 --seed 42
-
-# Final Round: build the canonical agent
-g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
-  NEXT_VISION/master_main.cpp -o NEXT_VISION/master_main
-
-# Final Round: run a reproducible local match
-python3 NEXT_VISION/judge.py \
-  NEXT_VISION/master_main.cpp NEXT_VISION/sample_ai_imitation.cpp \
-  --games 1 --seed 42
-```
-
-See the Korean and Japanese sections above for the repository layout, debugging and tournament commands, and simulator caveats. Finals-specific replay and analysis instructions are in [`NEXT_VISION/README.md`](NEXT_VISION/README.md).
+본선의 파일 설명과 리플레이 분석 방법은 [본선 폴더 안내](NEXT_VISION/README.md)에 정리했습니다.
